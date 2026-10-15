@@ -19,6 +19,16 @@
     experimental-features = [ "nix-command" "flakes" "pipe-operators"];
     auto-optimise-store = true;
     trusted-users = [ "root" "@wheel" ];
+    allowed-users = [ "*" ];
+    sandbox = "relaxed";
+  };
+
+  # Set nh settings
+  programs.nh = {
+  	enable = true;
+  	clean.enable = true;
+  	clean.extraArgs = "--keep-since 3d --keep 3";
+  	flake = "/etc/nixos"; # sets NH_OS_FLAKE variable for you
   };
 
   # Enable networking
