@@ -13,7 +13,7 @@
   	  bar = {
   	    default = {
   	      end = [ "tray" "notifications" "network" "volume" "battery" "control-center" "session" ];
-  	      start = [ "launcher" "workspaces" ];
+  	      start = [ "launcher" "workspaces" "wallpaper" ];
   	    };
   	  };
   	  battery = {
@@ -91,14 +91,14 @@
   	  wallpaper = {
   	    transition_on_startup = true;
   	    default = {
-  	      path = "/home/hung/Pictures/Wallpapers/lookslikethatgermanyoutubechannel.png";
+  	      path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
   	    };
   	    last = {
-  	      path = "/home/hung/Pictures/Wallpapers/lookslikethatgermanyoutubechannel.png";
+  	      path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
   	    };
   	    monitors = {
   	      eDP-1 = {
-  	        path = "/home/hung/Pictures/Wallpapers/lookslikethatgermanyoutubechannel.png";
+  	        path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
   	      };
   	    };
   	  };
