@@ -62,12 +62,12 @@
         };
   	  };
 
-  	  # Display (outputs) settings
-  	  output.eDP-1 = {
-  	  	scale = 1;
-  	  	hdr = "auto";
-  	  	direct_scanout = true;
-  	  };
+  	  # Display (outputs) settings, change to your needs
+  	  # output.eDP-1 = {
+  	  #   scale = 1;
+  	  #   hdr = "auto";
+  	  #  direct_scanout = true;
+  	  # };
 
   	  # Keybind settings
   	  keybinds = {
