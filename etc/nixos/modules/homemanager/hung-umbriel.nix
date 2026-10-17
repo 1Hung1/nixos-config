@@ -8,7 +8,7 @@
 
   # Set everything up
   programs.umbriel = {
-    enable = true
+    enable = true;
     
   	settings = {
   	  include.optional = {
