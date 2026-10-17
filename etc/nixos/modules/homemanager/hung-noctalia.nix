@@ -9,7 +9,6 @@
   # Noctalia settings
   programs.noctalia = {
     settings = {
-  	  config_version = 15;
   	  bar = {
   	    default = {
   	      end = [ "tray" "notifications" "network" "volume" "battery" "control-center" "session" ];
@@ -82,6 +81,7 @@
   	    };
   	  };
   	  theme = {
+  	    mode = dark;
   	    source = "wallpaper";
   	    wallpaper_scheme = "vibrant";
   	    templates = {
@@ -91,17 +91,7 @@
   	  };
   	  wallpaper = {
   	    transition_on_startup = true;
-  	    default = {
-  	      path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
-  	    };
-  	    last = {
-  	      path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
-  	    };
-  	    monitors = {
-  	      eDP-1 = {
-  	        path = "/home/hung/Pictures/Wallpapers/solarsystem.png";
-  	      };
-  	    };
+  	    default.path = "~/Pictures/Wallpapers/solarsystem.png";
   	  };
   	};
   };

@@ -2,6 +2,7 @@
 
 {
   # Disable some unneeded stuff and enable some needed stuff
+  services.displayManager.ly.enable = true;
   services.printing.enable = false;
   services.libinput.enable = true;
   services.power-profiles-daemon.enable = true;

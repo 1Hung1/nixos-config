@@ -8,8 +8,6 @@
 
   # Set everything up
   programs.umbriel = {
-  	enable = true;
-
   	settings = {
   	  include.optional = {
   	    files = [ "~/.config/umbriel/noctalia.toml" ];
