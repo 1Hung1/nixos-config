@@ -3,7 +3,6 @@
 {
   # Declarative Zsh configuration
   programs.zsh = {
-    enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
@@ -29,13 +28,12 @@
   	  };
   	  
   	  window = {
-  	    opacity = 0.75; # Subtle transparency
+  	    opacity = 0.75;
   	    decorations = "full";
   	  };
 
  	  font = {
   	    size = 12.0;
-  	    # Define the font family we installed for Oh My Posh
   	    normal = {
   	      family = "JetBrainsMono Nerd Font Mono"; 
   	      style = "Regular";
@@ -44,13 +42,6 @@
   	      family = "JetBrainsMono Nerd Font Mono";
   	      style = "Bold";
   	    };
-  	  };
-
-  	  cursor = {
-  	  	style = {
-  	  	  shape = "Beam";
-  	  	  blinking = "on";
-  	  	};
   	  };
   	};
   };

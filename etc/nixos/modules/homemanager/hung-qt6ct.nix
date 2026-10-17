@@ -7,7 +7,7 @@
 
   	qt6ctSettings = {
       Appearance = {
-        color_scheme_path = "/home/hung/.config/qt6ct/colors/noctalia.conf";
+        color_scheme_path = "~/.config/qt6ct/colors/noctalia.conf";
         custom_palette = true;
       	standard_dialogs = "xdgdesktopportal";
       	style = "Fusion";
