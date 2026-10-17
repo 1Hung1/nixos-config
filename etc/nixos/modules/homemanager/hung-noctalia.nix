@@ -29,7 +29,7 @@
   	    };
   	  };
   	  theme = {
-  	    mode = "dar"k;
+  	    mode = "dark";
   	    source = "wallpaper";
   	    wallpaper_scheme = "vibrant";
   	    templates = {
