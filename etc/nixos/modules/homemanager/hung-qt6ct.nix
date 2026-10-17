@@ -3,7 +3,7 @@
 {
   qt = {
   	enable = true;
-  	platformTheme.name = "qtct"; # In Home Manager, "qtct" enables both qt5ct and qt6ct config utilities
+  	platformTheme.name = "qt6ct"; # In Home Manager, "qtct" enables both qt5ct and qt6ct config utilities
 
   	qt6ctSettings = {
       Appearance = {

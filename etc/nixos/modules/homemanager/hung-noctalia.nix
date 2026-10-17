@@ -86,6 +86,7 @@
   	    wallpaper_scheme = "vibrant";
   	    templates = {
   	      builtin_ids = [ "alacritty" "gtk3" "gtk4" "qt" "umbriel" ];
+  	      community_ids = [ "discord" "micro" "fastfetch" ];
   	    };
   	  };
   	  wallpaper = {

@@ -1,14 +1,11 @@
 { pkgs, ... }:
 
 {
-  home.username = "hung";
-  home.homeDirectory = "/home/hung";
   home.stateVersion = "26.11"; # Match your nixpkgs version
 
   # User-specific packages installed just for you
   home.packages = with pkgs; [
     google-chrome
-    btop
     fastfetch
     alacritty
     qt6Packages.qt6ct
@@ -18,7 +15,7 @@
 
   # Import my settings and configs
   imports = [
-  	./homemanager
+    ./homemanager
   ];
   
   # Let Home Manager manage itself when changes are applied
