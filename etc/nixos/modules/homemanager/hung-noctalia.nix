@@ -8,6 +8,8 @@
 
   # Noctalia settings
   programs.noctalia = {
+    enable = true;
+    
     settings = {
   	  bar = {
   	    default = {
