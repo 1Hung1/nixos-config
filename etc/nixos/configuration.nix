@@ -10,14 +10,23 @@
     inputs.noctalia.nixosModules.default
     inputs.umbriel.nixosModules.default
   ];
+
+  # Point to a facter.json
+  hardware.facter.reportPath = ./facter.json;
   
   # Set Nix settings
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" "pipe-operators"];
-    auto-optimise-store = true;
-    trusted-users = [ "root" "@wheel" ];
-    allowed-users = [ "*" ];
-    sandbox = "relaxed";
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" "pipe-operators"];
+      auto-optimise-store = true;
+      trusted-users = [ "root" "@wheel" ];
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      persistent = true;
+      options = "--delete-old"; 
+    };
   };
 
   # Set time zone. and locale
