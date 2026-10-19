@@ -13,7 +13,7 @@
     settings = {
   	  bar = {
   	    default = {
-  	      end = [ "tray" "notifications" "network" "volume" "battery" "bluetooth" "control-center" "session" ];
+  	      end = [ "tray" "notifications" "network" "volume" "battery" "control-center" "session" ];
   	      start = [ "launcher" "workspaces" "wallpaper" ];
   	    };
   	  };

@@ -1,11 +1,11 @@
 { inputs, pkgs, ... }:
 
 {
-  # Define a user account, change username if needed
+  # Define a user account
   users.users."hung" = {
     isNormalUser = true;
     description = "Hung";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
   };
   home-manager = {

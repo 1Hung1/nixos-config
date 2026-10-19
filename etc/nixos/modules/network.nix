@@ -11,8 +11,4 @@
     matchConfig.Name = "wl*";
     networkConfig.DHCP = "yes";
   };
-  systemd.network.networks."50-ethernet" = {
-    matchConfig.Name = "enp*";
-    networkConfig.DHCP = "yes";
-  };
 }

@@ -13,6 +13,14 @@
 
   # Point to a facter.json
   hardware.facter.reportPath = ./facter.json;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # VA-API driver for Broadwell and newer (iHD)
+      vpl-gpu-rt         # OneVPL GPU Runtime for Intel QuickSync Video (QSV)
+      libvdpau-va-gl
+    ];
+  };
   
   # Set Nix settings
   nix = {

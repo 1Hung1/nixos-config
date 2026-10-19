@@ -62,6 +62,13 @@
         };
   	  };
 
+  	  # Display (outputs) settings
+  	  output.eDP-1 = {
+  	  	scale = 1;
+  	  	hdr = "auto";
+  	  	direct_scanout = true;
+  	  };
+
   	  # Keybind settings
   	  keybinds = {
   	    # Application keybinds

@@ -15,6 +15,7 @@
     };
     umbriel.url = "github:noctalia-dev/umbriel";
     noctalia.url = "github:noctalia-dev/noctalia";
+    areofyl-fetch.url = "github:areofyl/fetch";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
   outputs = { self, nixpkgs, home-manager, ...}@inputs: {

@@ -25,7 +25,6 @@
     loader.systemd-boot = {
       enable = true;
       consoleMode = "max";
-      editor = true;
     };
     loader.timeout = 0;
     initrd.systemd.enable = true;

@@ -14,7 +14,7 @@
     ./hung-qt6ct.nix
 
     # Extra stuff (uncomment if unneeded)
-    # ./hung-areofyl-fetch.nix
+    ./hung-areofyl-fetch.nix
     # ./hung-obs-studio.nix
   ];
 }
