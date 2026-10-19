@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }:
 
 {
-  # Define a user account
+  # Define a user account, change username if needed
   users.users."hung" = {
     isNormalUser = true;
     description = "Hung";
