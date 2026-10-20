@@ -6,9 +6,9 @@
     ./hardware-configuration.nix
     ./modules
 
-    # My desktop stack
-    inputs.noctalia.nixosModules.default
+    # Import my desktop stack
     inputs.umbriel.nixosModules.default
+    inputs.noctalia.nixosModules.default
   ];
 
   # Point to a facter.json
@@ -56,13 +56,16 @@
      curl
      zsh
   ];
-
-  # My shell and desktop stack
   programs.zsh.enable = true;
-  programs.umbriel.enable = true;
   programs.noctalia.enable = true;
+  programs.umbriel.enable = true;
   # Disable the firewall altogether.
   networking.firewall.enable = false;
+
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   
   system.stateVersion = "26.11";
 

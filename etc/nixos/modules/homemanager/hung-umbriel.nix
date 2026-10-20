@@ -60,6 +60,10 @@
         focus = {
           follows_mouse = true;
         };
+        tablet = {
+          enabled = true;
+          map_to_output = "DVI-I-1";
+        };
   	  };
 
   	  # Display (outputs) settings
@@ -67,6 +71,12 @@
   	  	scale = 1;
   	  	hdr = "auto";
   	  	direct_scanout = true;
+  	  	position = [ 0 0 ];
+  	  };
+
+      # Display (outputs) settings
+  	  output.DVI-I-1 = {
+  	    position = [ 0 1080 ];
   	  };
 
   	  # Keybind settings
