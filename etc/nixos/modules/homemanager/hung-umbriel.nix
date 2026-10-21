@@ -73,8 +73,6 @@
   	  	direct_scanout = true;
   	  	position = [ 0 0 ];
   	  };
-
-      # Display (outputs) settings
   	  output.DVI-I-1 = {
   	    position = [ 0 1080 ];
   	  };
@@ -82,21 +80,10 @@
   	  # Keybind settings
   	  keybinds = {
   	    # Application keybinds
-  	    "Mod+Return" = {
-		  action = "spawn:alacritty";
-		  repeat = false;
-		};
+  	    "Mod+Return" = "spawn:alacritty";
 		"Mod+D" = "spawn:noctalia msg panel-toggle launcher";
-		"Mod+Q" = {
-		  action = "window-close";
-		  repeat = false;
-		};
+		"Mod+Q" = "window-close";
 		"Ctrl+Alt+Delete" = "session-quit";
-		"Mod+Escape" = {
-		  action = "shortcuts-inhibit-toggle";
-		  allow_when_inhibited = true;
-		  repeat = false;
-		};
     	"Mod+I" = "spawn:noctalia msg settings-toggle";
 
 		# Focus and movement keybinds
@@ -131,42 +118,15 @@
 		"Mod+Ctrl+9" = "window-move-to-workspace:9";
 
 		# Window management keybinds
-		"Mod+V" = {
-		  action = "window-toggle-floating";
-		  repeat = false;
-		};
-		"Mod+Shift+V" = {
-		  action = "window-focus-switch-floating";
-		  repeat = false;
-		};
-		"Mod+P" = {
-		  action = "window-toggle-pinned";
-		  repeat = false;
-		};
-		"Mod+Ctrl+F" = {
-		  action = "window-toggle-maximize-to-edges";
-		  repeat = false;
-		};
-		"Mod+Shift+F" = {
-		  action = "window-toggle-fullscreen";
-		  repeat = false;
-		};
-		"Mod+F" = {
-		  action = "window-toggle-maximize";
-		  repeat = false;
-		};
+		"Mod+V" = "window-toggle-floating";
+		"Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
+		"Mod+Shift+F" = "window-toggle-fullscreen";
+		"Mod+F" = "window-toggle-maximize";
 		"Mod+R" = "window-cycle-primary-extent";
 		"Mod+Shift+R" = "window-cycle-primary-extent-back";
 		"Mod+Comma" = "window-consume-right";
 		"Mod+Period" = "window-consume-or-expel-left";
-		"Mod+O" = {
-		  action = "overview-toggle";
-		  repeat = false;
-		};
-		"Mod+W" = {
-		  action = "column-toggle-tabbed";
-		  repeat = false;
-		};
+		"Mod+W" = "column-toggle-tabbed";
 
 		# Screenshots
 		"Print" = "spawn:noctalia msg screenshot-region";
@@ -243,13 +203,6 @@
   	  };
 
   	  # Other settings
-  	  hot_corners = {
-  	    top_left = {
-  	      enabled = true;
-  	      delay_ms = 500;
-  	      action = "overview-open";
-  	  	};
-  	  };
   	  screencast = {
   	    disable_dynamic_confirmation = false;
   	  };

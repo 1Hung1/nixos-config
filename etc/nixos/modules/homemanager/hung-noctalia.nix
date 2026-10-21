@@ -20,7 +20,6 @@
   	  shell = {
   	    font_family = "JetBrainsMono Nerd Font Mono";
   	    telemetry_enabled = true;
-  	    umbriel_overview_type_to_launch_enabled = true;
   	    launcher = {
   	      default_view = "all";
   	    };
