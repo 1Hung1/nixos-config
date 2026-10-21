@@ -12,5 +12,11 @@
       "sh.ppy.osu"
       "org.vinegarhq.Sober"
     ];
+    remotes = [
+      {
+        name = "flathub";
+        location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+      }
+    ];
   };
 }

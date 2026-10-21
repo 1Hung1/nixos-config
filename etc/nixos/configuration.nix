@@ -37,7 +37,7 @@
     };
   };
 
-  # Set time zone. and locale
+  # Set time zone and locale
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
   security.sudo = {
@@ -54,7 +54,6 @@
      micro
      wget
      curl
-     zsh
   ];
   programs.zsh.enable = true;
   programs.noctalia.enable = true;

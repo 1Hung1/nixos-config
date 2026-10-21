@@ -17,15 +17,18 @@
   security.rtkit.enable = true;
 
   systemd.services.battery-charge-threshold = {
-    description = "Set ASUS battery charge thresholds";
+    description = "Set battery charge thresholds";
     wantedBy = [ "multi-user.target" ];
-    after = [ "systemd-udev-settle.service" ];
-  
+
     serviceConfig = {
       Type = "oneshot";
+      RemainAfterExit = true;
       ExecStart = pkgs.writeShellScript "battery-charge-threshold" ''
         set -eu
-        echo 80 > /sys/class/power_supply/BAT0/charge_control_end_threshold
+        for bat in /sys/class/power_supply/BAT*; do
+          [ -e "$bat/charge_control_end_threshold" ] || continue
+          echo 80 > "$bat/charge_control_end_threshold"
+        done
       '';
     };
   };

@@ -15,6 +15,6 @@
 
     # Extra stuff (uncomment if unneeded)
     # ./hung-obs-studio.nix
-    ./hung-opentabletdriver.nix
+    # ./hung-opentabletdriver.nix
   ];
 }

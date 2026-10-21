@@ -7,6 +7,7 @@
     description = "Hung";
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
+    hashedPassword = "$y$j9T$HeNwafR54cNyu16uUzP/w1$cIgNVvwv0si9NTiNZ47wFmoq8oHbIJJ8POKcsNaLv16";
   };
   home-manager = {
     useGlobalPkgs = true;
