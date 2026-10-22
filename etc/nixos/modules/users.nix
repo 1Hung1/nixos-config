@@ -13,6 +13,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
     users.hung = import ./hung-homemanager.nix;
   };
 }

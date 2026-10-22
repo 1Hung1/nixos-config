@@ -29,12 +29,6 @@
       auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
     };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      persistent = true;
-      options = "--delete-old"; 
-    };
   };
 
   # Set time zone and locale
