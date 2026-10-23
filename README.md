@@ -11,3 +11,6 @@ Installation:
 - Update nixpkgs: sudo nix-channel --update
 - Run: sudo nix --extra-experimental-features "nix-command"  run nixpkgs#nixos-facter | sudo tee /etc/nixos/facter.json
 - Rebuild your system: sudo nixos-rebuild --flake /etc/nixos#nixos-btw
+
+![My desktop](showcases/fastfetch.png)
+![My desktop](showcases/microfetch.png)
