@@ -13,7 +13,15 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = "backup";
+    backupCommand = pkgs.writeShellScript "hm-backup" ''
+      set -eu
+    
+      target="$1"
+      timestamp="$(date +%Y%m%d-%H%M%S-%N)"
+      backup="''${target}.backup-''${timestamp}"
+    
+      mv -- "$target" "$backup"
+    '';
     users.hung = import ./hung-homemanager.nix;
   };
 }

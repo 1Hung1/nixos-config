@@ -76,6 +76,11 @@
       output.DVI-I-1 = {
         position = [ 0 1080 ];
       };
+      output.HDMI-A-1 = {
+      	scale = 2.25;
+      	hdr = "on";
+      	direct_scanout = true;
+      };
 
       # Keybind settings
       keybinds = {

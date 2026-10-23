@@ -29,6 +29,12 @@
       auto-optimise-store = true;
       trusted-users = [ "root" "@wheel" ];
     };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 3d";
+      persistent = true;
+    };
   };
 
   # Set time zone and locale
@@ -52,9 +58,11 @@
   programs.zsh.enable = true;
   programs.noctalia.enable = true;
   programs.umbriel.enable = true;
+  
   # Disable the firewall altogether.
   networking.firewall.enable = false;
 
+  # Enable appimage support
   programs.appimage = {
     enable = true;
     binfmt = true;
