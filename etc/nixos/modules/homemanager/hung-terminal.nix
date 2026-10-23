@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # Declarative Zsh configuration
   programs.zsh = {
     enable = true;
     enableCompletion = true;

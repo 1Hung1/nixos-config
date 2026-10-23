@@ -6,13 +6,21 @@
     ./hardware-configuration.nix
     ./modules
 
-    # My desktop stack
-    inputs.noctalia.nixosModules.default
+    # Import my desktop stack
     inputs.umbriel.nixosModules.default
+    inputs.noctalia.nixosModules.default
   ];
 
   # Point to a facter.json
   hardware.facter.reportPath = ./facter.json;
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # VA-API driver for Broadwell and newer (iHD)
+      vpl-gpu-rt         # OneVPL GPU Runtime for Intel QuickSync Video (QSV)
+      libvdpau-va-gl
+    ];
+  };
   
   # Set Nix settings
   nix = {
@@ -24,7 +32,7 @@
     gc = {
       automatic = true;
       dates = "daily";
-      options = "--delete-old";
+      options = "--delete-older-than 3d";
       persistent = true;
     };
   };
@@ -47,11 +55,9 @@
      wget
      curl
   ];
-
-  # My shell and desktop stack
   programs.zsh.enable = true;
-  programs.umbriel.enable = true;
   programs.noctalia.enable = true;
+  programs.umbriel.enable = true;
   
   # Disable the firewall altogether.
   networking.firewall.enable = false;

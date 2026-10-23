@@ -60,6 +60,26 @@
         focus = {
           follows_mouse = true;
         };
+        tablet = {
+          enabled = true;
+          map_to_output = "DVI-I-1";
+        };
+      };
+
+      # Display (outputs) settings
+      output.eDP-1 = {
+        scale = 1;
+        hdr = "auto";
+        direct_scanout = true;
+        position = [ 0 0 ];
+      };
+      output.DVI-I-1 = {
+        position = [ 0 1080 ];
+      };
+      output.HDMI-A-1 = {
+      	scale = 2.25;
+      	hdr = "on";
+      	direct_scanout = true;
       };
 
       # Keybind settings
@@ -180,6 +200,12 @@
         blur_popups = true;
         blur_optimized = false;
       } ];
+
+      # Event settings
+      events = {
+        lid_close = "umbriel msg output-disable:eDP-1";
+        lid_open = "umbriel msg output-enable:eDP-1";
+      };
 
       # Other settings
       screencast = {
