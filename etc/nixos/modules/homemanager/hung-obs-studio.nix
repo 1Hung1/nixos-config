@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.obs-studio;
     plugins = with pkgs.obs-studio-plugins; [
-      # Add any desired plugins here (e.g., obs-vaapi if using older branches)
+      # Add any desired plugins here
       obs-pipewire-audio-capture
       wlrobs
     ];

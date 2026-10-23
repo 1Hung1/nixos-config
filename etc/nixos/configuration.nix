@@ -24,12 +24,12 @@
     gc = {
       automatic = true;
       dates = "daily";
+      options = "--delete-old";
       persistent = true;
-      options = "--delete-old"; 
     };
   };
 
-  # Set time zone. and locale
+  # Set time zone and locale
   time.timeZone = "Asia/Ho_Chi_Minh";
   i18n.defaultLocale = "en_US.UTF-8";
   security.sudo = {
@@ -46,15 +46,21 @@
      micro
      wget
      curl
-     zsh
   ];
 
   # My shell and desktop stack
   programs.zsh.enable = true;
   programs.umbriel.enable = true;
   programs.noctalia.enable = true;
+  
   # Disable the firewall altogether.
   networking.firewall.enable = false;
+
+  # Enable appimage support
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   
   system.stateVersion = "26.11";
 

@@ -5,7 +5,7 @@
   networking.networkmanager.enable = false;
   networking.useNetworkd = true;
   networking.wireless.iwd.enable = true;
-  networking.hostName = "nixos-btw";
+  networking.hostName = "nixos-btw"; # Change your hostname here
   services.resolved.enable = true;
   systemd.network.networks."50-wifi" = {
     matchConfig.Name = "wl*";

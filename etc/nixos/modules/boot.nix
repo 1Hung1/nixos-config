@@ -10,9 +10,6 @@
       "threadirqs"
       "nowatchdog"
       "usbcore.autosuspend=1"
-      "i915.enable_psr=1"
-      "i915.enable_fbc=1"
-      "i915.enable_dc=2"
     ];
 
     # Make all audio spec devices not go into power-save
