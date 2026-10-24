@@ -11,13 +11,15 @@
     qt6Packages.qt6ct
     vesktop
     nerd-fonts.jetbrains-mono
+    chatgpt
+    nil
   ];
 
   # Import my settings and configs
   imports = [
     ./homemanager
   ];
-  
+
   # Let Home Manager manage itself when changes are applied
   programs.home-manager.enable = true;
 }

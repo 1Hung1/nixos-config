@@ -12,9 +12,5 @@
 
     # GUI theming configuration
     ./hung-qt6ct.nix
-
-    # Extra stuff (uncomment if unneeded)
-    # ./hung-obs-studio.nix
-    # ./hung-opentabletdriver.nix
   ];
 }

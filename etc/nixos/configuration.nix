@@ -1,4 +1,8 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  ...
+}:
 
 {
   # Import needed stuff
@@ -17,17 +21,24 @@
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # VA-API driver for Broadwell and newer (iHD)
-      vpl-gpu-rt         # OneVPL GPU Runtime for Intel QuickSync Video (QSV)
+      vpl-gpu-rt # OneVPL GPU Runtime for Intel QuickSync Video (QSV)
       libvdpau-va-gl
     ];
   };
-  
+
   # Set Nix settings
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" "pipe-operators"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "pipe-operators"
+      ];
       auto-optimise-store = true;
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
     gc = {
       automatic = true;
@@ -43,22 +54,22 @@
   security.sudo = {
     enable = true;
     wheelNeedsPassword = false; # Allows the 'wheel' group to use sudo without a password
-    execWheelOnly = true;       # Strict restriction: Only users in 'wheel' can run sudo
+    execWheelOnly = true; # Strict restriction: Only users in 'wheel' can run sudo
   };
-  
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-     micro
-     wget
-     curl
+    micro
+    wget
+    curl
   ];
   programs.zsh.enable = true;
   programs.noctalia.enable = true;
   programs.umbriel.enable = true;
-  
+
   # Disable the firewall altogether.
   networking.firewall.enable = false;
 
@@ -67,7 +78,6 @@
     enable = true;
     binfmt = true;
   };
-  
-  system.stateVersion = "26.11";
 
+  system.stateVersion = "26.11";
 }

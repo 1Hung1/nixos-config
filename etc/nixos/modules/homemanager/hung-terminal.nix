@@ -62,6 +62,8 @@
       colorscheme = "noctalia";
       tabstospaces = true;
       tabsize = 2;
+      "lsp.server" = "nix=nil";
+      "lsp.formatOnSave" = true;
     };
   };
 }

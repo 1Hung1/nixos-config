@@ -21,7 +21,7 @@
     '';
 
     # Use the systemd-boot EFI boot loader
-    loader.efi.canTouchEfiVariables = true;  
+    loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot = {
       enable = true;
       consoleMode = "max";

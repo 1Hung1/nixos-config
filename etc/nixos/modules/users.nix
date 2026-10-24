@@ -17,7 +17,7 @@
       set -eu
     
       target="$1"
-      timestamp="$(date +%Y%m%d-%H%M%S-%N)"
+      timestamp="$(date +%Y%m%d-%H%M%S)"
       backup="''${target}.backup-''${timestamp}"
     
       mv -- "$target" "$backup"
