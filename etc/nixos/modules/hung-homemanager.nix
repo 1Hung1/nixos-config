@@ -11,7 +11,6 @@
     qt6Packages.qt6ct
     vesktop
     nerd-fonts.jetbrains-mono
-    chatgpt
     nil
   ];
 
