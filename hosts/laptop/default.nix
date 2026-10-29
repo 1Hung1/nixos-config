@@ -4,8 +4,10 @@
     ./battery-life.nix
 
     # Import filesystems and important stuff
-    ./filesystems.nix
-    ./boot.nix
-    ./hardware-configuration.nix
+    ./core/filesystems.nix
+    ./core/boot.nix
+    ./hardware/hardware-configuration.nix
+
+    # Import my homemanager config
   ];
 }

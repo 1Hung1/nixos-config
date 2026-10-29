@@ -8,7 +8,7 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      rebuild-system = "sudo nixos-rebuild switch --flake ~/nixos#normal";
+      rebuild-system = lib.mkDefault "sudo nixos-rebuild switch --flake ~/nixos#normal";
     };
   };
 
