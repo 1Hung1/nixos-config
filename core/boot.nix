@@ -11,8 +11,6 @@
       "nowatchdog"
       "usbcore.autosuspend=1"
     ];
-    initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-    kernelModules = [ "kvm-intel" "kvm-amd" ];
 
     # Make all audio spec devices not go into power-save
     extraModprobeConfig = ''

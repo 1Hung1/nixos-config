@@ -14,7 +14,7 @@ My personal NixOS configuration, with a reusable `normal` configuration and host
 2. Generate a hardware configuration for your machine:
 
    ```bash
-   nixos-generate-config --show-hardware-config | tee ~/nixos/core/hardware-configuration.nix
+   sudo nixos-generate-config --show-hardware-config | tee ~/nixos/core/hardware-config.nix
    ```
 
    **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
@@ -23,7 +23,7 @@ My personal NixOS configuration, with a reusable `normal` configuration and host
 
    ```nix
    imports = [
-     ./hardware-configuration.nix
+     ./hardware-config.nix # Uncomment this line
      # Other imports...
    ];
    ```
