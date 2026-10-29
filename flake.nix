@@ -22,6 +22,10 @@
           modules = [
             ./.
             home-manager.nixosModules.home-manager
+            {
+              system.configurationRevision =
+                self.rev or self.dirtyRev or null;
+            }
           ];
         };
         laptop = nixpkgs.lib.nixosSystem {
@@ -31,6 +35,10 @@
             ./.
             ./hosts/laptop
             home-manager.nixosModules.home-manager
+            {
+              system.configurationRevision =
+                self.rev or self.dirtyRev or null;
+            }
           ];
         };
       };
