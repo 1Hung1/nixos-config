@@ -1,14 +1,10 @@
 # nixos-config
 My normal NixOS config (for my laptop)
 
-Installation:
-- Copy all files in etc/nixos to your system's /etc/nixos
-- Then copy Pictures to your home (~). Needed for wallpapers
-- Add nixpkgs: sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-- Update nixpkgs: sudo nix-channel --update
-- Run: sudo nix --extra-experimental-features "nix-command"  run nixpkgs#nixos-facter | sudo tee /etc/nixos/facter.json
-- Rebuild your system: sudo nixos-rebuild --flake /etc/nixos#nixos-btw
+## Installation:
+- `git clone` this repo to `~/nixos`
+- Run: `sudo nixos-rebuild switch --flake ~/nixos#normal`
+- Reboot and you're done!
 
-Showcase:
-![My desktop](showcases/fastfetch.png)
-![My desktop](showcases/microfetch.png)
+## Notes
+`./hosts/laptop` is my laptop related config files

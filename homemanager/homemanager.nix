@@ -11,13 +11,12 @@
     qt6Packages.qt6ct
     vesktop
     nerd-fonts.jetbrains-mono
+    adw-gtk3
   ];
 
   # Import my settings and configs
-  imports = [
-    ./homemanager
-  ];
-  
+  imports = [ ./configs ];
+
   # Let Home Manager manage itself when changes are applied
   programs.home-manager.enable = true;
 }

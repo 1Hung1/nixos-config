@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   boot = {
@@ -11,6 +11,8 @@
       "nowatchdog"
       "usbcore.autosuspend=1"
     ];
+    initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+    kernelModules = [ "kvm-intel" "kvm-amd" ];
 
     # Make all audio spec devices not go into power-save
     extraModprobeConfig = ''
@@ -18,13 +20,11 @@
     '';
 
     # Use the systemd-boot EFI boot loader
-    loader.efi.canTouchEfiVariables = true;  
+    loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot = {
       enable = true;
       consoleMode = "max";
-      editor = true;
     };
-    loader.timeout = 0;
-    initrd.systemd.enable = true;
+    loader.timeout = lib.mkDefault 5;
   };
 }

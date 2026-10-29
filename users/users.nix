@@ -1,12 +1,12 @@
 { inputs, pkgs, ... }:
 
 {
-  # Define a user account, change username if needed and set a password
+  # Define a user account (change username if needed)
   users.users."hung" = {
     isNormalUser = true;
-    description = "Hung";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" "render" "video" "audio" ];
     shell = pkgs.zsh;
+    # Make sure to run passwd to set a password for the account
   };
   home-manager = {
     useGlobalPkgs = true;
@@ -16,11 +16,11 @@
       set -eu
 
       target="$1"
-      timestamp="$(date +%Y%m%d-%H%M%S-%N)"
+      timestamp="$(date +%Y%m%d-%H%M%S)"
       backup="''${target}.backup-''${timestamp}"
 
       mv -- "$target" "$backup"
     '';
-    users.hung = import ./hung-homemanager.nix;
+    users.hung = import ../homemanager/homemanager.nix;
   };
 }
