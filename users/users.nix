@@ -21,6 +21,6 @@
 
       mv -- "$target" "$backup"
     '';
-    users.hung = import ../homemanager/homemanager.nix;
+    users.hung = { imports = [ ../homemanager/homemanager.nix ]; };
   };
 }

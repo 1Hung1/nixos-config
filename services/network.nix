@@ -13,7 +13,7 @@
     networkConfig.DHCP = "yes";
   };
   systemd.network.networks."50-ethernet" = {
-    matchConfig.name = "enp*"
+    matchConfig.name = "enp*";
     networkConfig.DHCP = "yes";
   };
 }

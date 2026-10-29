@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     google-chrome
     fastfetch
-    alacritty
     qt6Packages.qt6ct
     vesktop
     nerd-fonts.jetbrains-mono

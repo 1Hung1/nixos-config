@@ -15,6 +15,7 @@
           center = [ ];
           end = [ "tray" "notifications" "network" "volume" "battery" "control-center" "session" ];
           margin_ends = 10;
+          margin_edge = 6;
           capsule = true;
           background_opacity = 0.15;
           padding = 10;

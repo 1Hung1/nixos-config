@@ -1,3 +1,3 @@
 {
-  home-manager.users.hung = [ ./changed-settings.nix ];
+  home-manager.users.hung = { imports = [ ./changed-settings.nix ]; };
 }
