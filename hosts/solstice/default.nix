@@ -9,6 +9,7 @@
     ./core/sudo.nix
     ./hardware/hardware-configuration.nix
     ./services/hostname.nix
+    ./services/openssh.nix
 
     # Import my homemanager config
     ./homemanager/hung.nix
