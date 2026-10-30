@@ -29,11 +29,6 @@
     font-bold=JetBrainsMono Nerd Font Mono:style=Bold:size=12
     font-italic=JetBrainsMono Nerd Font Mono:style=Italic:size=12
     font-bold-italic=JetBrainsMono Nerd Font Mono:style=Bold Italic:size=12
-    title=Foot
-
-    [scrollback]
-    lines=10000
-    multiplier=3
 
     [cursor]
     style=block

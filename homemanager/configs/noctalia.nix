@@ -13,7 +13,7 @@
         default = {
           start = [ "launcher" "active_window" "workspaces" "wallpaper" ];
           center = [ ];
-          end = [ "tray" "notifications" "network" "volume" "battery" "control-center" "session" ];
+          end = [ "tray" "network" "battery" "session" ];
           margin_ends = 10;
           margin_edge = 6;
           capsule = true;

@@ -6,7 +6,10 @@
     ./umbriel.nix
     ./noctalia.nix
 
-    # Terminal, git and shell configuration
+    # Terminal and shell configuration
     ./terminal.nix
+
+    # Setup some user dirs and Wallpapers
+    ./user-dirs.nix
   ];
 }

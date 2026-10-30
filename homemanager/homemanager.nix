@@ -1,19 +1,16 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "26.11"; # Match your nixpkgs version
+  home.stateVersion = "26.11"; # Match the nixpkgs version
 
-  # User-specific packages installed just for you
+  # User-specific packages go here
   home.packages = with pkgs; [
-    google-chrome
     fastfetch
-    qt6Packages.qt6ct
-    vesktop
     nerd-fonts.jetbrains-mono
     adw-gtk3
   ];
 
-  # Import my settings and configs
+  # Import settings and configs
   imports = [ ./configs ];
 
   # Let Home Manager manage itself when changes are applied

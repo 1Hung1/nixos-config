@@ -71,55 +71,38 @@
       # Keybind settings
       keybinds = {
         # Application keybinds
-        "Mod+Return" = "spawn:foot";
-        "Mod+D" = "spawn:noctalia msg panel-toggle launcher";
+        "Mod+Return" = "spawn foot";
+        "Mod+D" = "spawn noctalia msg panel-toggle launcher";
         "Mod+Q" = "window-close";
         "Ctrl+Alt+Delete" = "session-quit";
-        "Mod+I" = "spawn:noctalia msg settings-toggle";
+        "Mod+I" = "spawn noctalia msg settings-toggle";
 
         # Focus and movement keybinds
-        "Alt+Tab" = "spawn:noctalia msg window-switcher hold";
+        "Alt+Tab" = "spawn noctalia msg window-switcher hold";
         "Mod+Up" = "window-focus-previous";
         "Mod+Down" = "window-focus-next";
-
-        # Workspaces keybinds
-        "Mod+1" = "workspace-switch:1";
-        "Mod+2" = "workspace-switch:2";
-        "Mod+3" = "workspace-switch:3";
-        "Mod+4" = "workspace-switch:4";
-        "Mod+5" = "workspace-switch:5";
-        "Mod+6" = "workspace-switch:6";
-        "Mod+7" = "workspace-switch:7";
-        "Mod+8" = "workspace-switch:8";
-        "Mod+9" = "workspace-switch:9";
-        "Mod+Ctrl+1" = "window-move-to-workspace:1";
-        "Mod+Ctrl+2" = "window-move-to-workspace:2";
-        "Mod+Ctrl+3" = "window-move-to-workspace:3";
-        "Mod+Ctrl+4" = "window-move-to-workspace:4";
-        "Mod+Ctrl+5" = "window-move-to-workspace:5";
-        "Mod+Ctrl+6" = "window-move-to-workspace:6";
-        "Mod+Ctrl+7" = "window-move-to-workspace:7";
-        "Mod+Ctrl+8" = "window-move-to-workspace:8";
-        "Mod+Ctrl+9" = "window-move-to-workspace:9";
-
-        # Window management keybinds
-        "Mod+V" = "window-toggle-floating";
         "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
         "Mod+Shift+F" = "window-toggle-fullscreen";
         "Mod+F" = "window-toggle-maximize";
 
-        # Screenshots
-        "Print" = "spawn:noctalia msg screenshot-region";
+        # Workspaces keybinds
+        "Mod+1" = "workspace-switch 1";
+        "Mod+2" = "workspace-switch 2";
+        "Mod+3" = "workspace-switch 3";
+        "Mod+4" = "workspace-switch 4";
+        "Mod+5" = "workspace-switch 5";
+        "Mod+Ctrl+1" = "window-move-to-workspace 1";
+        "Mod+Ctrl+2" = "window-move-to-workspace 2";
+        "Mod+Ctrl+3" = "window-move-to-workspace 3";
+        "Mod+Ctrl+4" = "window-move-to-workspace 4";
+        "Mod+Ctrl+5" = "window-move-to-workspace 5";
 
-        # Media controls
-        "XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
-        "XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
-        "XF86MonBrightnessUp" = "spawn:noctalia msg brightness-up";
-        "XF86MonBrightnessDown" = "spawn:noctalia msg brightness-down";
+        # Screenshots
+        "Print" = "spawn noctalia msg screenshot-region";
       };
 
       # Layout settings
-      layout = { mode = "floating"; gap = 8; };
+      layout = { mode = "stacking"; gap = 6; };
 
       # Window and layer rules settings
       window_rule = [
