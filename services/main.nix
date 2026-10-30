@@ -5,7 +5,6 @@
   services.displayManager.ly.enable = true;
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
-  services.openssh.enable = true;
   services.fprintd.enable = false;
   services.printing.enable = false;
   services.pipewire = {

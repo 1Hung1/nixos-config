@@ -19,7 +19,7 @@ My personal NixOS configuration, with a reusable `normal` configuration and host
 
    **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
 
-3. Make sure `core/hardware-configuration.nix` is imported by `core/default.nix`:
+3. Make sure `core/hardware-config.nix` is imported by `core/default.nix`:
 
    ```nix
    imports = [

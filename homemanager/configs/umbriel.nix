@@ -54,7 +54,6 @@
         touchpad = {
           tap = true;
           natural_scroll = true;
-          left_handed = true;
           accel_profile = "flat";
           disable_while_typing = false;
           disable_on_external_mouse = false;

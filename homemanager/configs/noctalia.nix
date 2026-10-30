@@ -39,7 +39,7 @@
         source = "wallpaper";
         wallpaper_scheme = "vibrant";
         templates = {
-          builtin_ids = [ "alacritty" "gtk3" "gtk4" "kcolorscheme" "umbriel" ];
+          builtin_ids = [ "foot" "gtk3" "gtk4" "kcolorscheme" "umbriel" ];
           community_ids = [ "discord" "micro" ];
         };
       };
