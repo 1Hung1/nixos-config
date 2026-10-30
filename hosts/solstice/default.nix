@@ -8,6 +8,7 @@
     ./core/boot.nix
     ./core/sudo.nix
     ./hardware/hardware-configuration.nix
+    ./services/hostname.nix
 
     # Import my homemanager config
     ./homemanager/hung.nix

@@ -43,6 +43,6 @@ My personal NixOS configuration, with a reusable `normal` configuration and host
 ## Notes
 
 - `normal` is intended to be adapted for different machines. You must generate and review your own hardware configuration before using it.
-- `hosts/laptop/` contains laptop-specific configuration modules.
+- `hosts/solstice/` contains my laptop-specific configuration modules.
 - Back up your existing configuration before replacing hardware settings.
 - This repository is a personal configuration, not a universal installer. Review all settings before applying them to your system.

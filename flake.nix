@@ -1,16 +1,10 @@
 {
   inputs = {
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    home-manager = { url = "github:nix-community/home-manager"; inputs.nixpkgs.follows = "nixpkgs"; };
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    qtengine = {
-      url = "github:kossLAN/qtengine";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    qtengine = { url = "github:kossLAN/qtengine"; inputs.nixpkgs.follows = "nixpkgs"; };
   };
   outputs =
     { self, nixpkgs, home-manager, ... }@inputs:
@@ -33,7 +27,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             ./.
-            ./hosts/laptop
+            ./hosts/solstice
             home-manager.nixosModules.home-manager
             {
               system.configurationRevision =
