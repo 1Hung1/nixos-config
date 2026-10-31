@@ -1,0 +1,59 @@
+
+name: Update flake.lock
+
+on:
+  schedule:
+    - cron: "00 6 * * *" # Everyday at 03:17 UTC
+      timezone: Asia/Ho_Chi_Minh
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auto-update-flake-lock
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update flake inputs
+        run: nix flake update
+
+      - name: Validate flake
+        run: |
+          nix flake check --no-build
+          nix eval --raw .#nixosConfigurations.normal.config.system.build.toplevel.drvPath
+          nix eval --raw .#nixosConfigurations.solstice.config.system.build.toplevel.drvPath
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automated/update-flake-lock
+          delete-branch: true
+          title: "chore: update flake.lock"
+          commit-message: "chore: update flake.lock"
+          body: |
+            Automated update of all flake inputs.
+
+            - Updated using `nix flake update`
+            - Ran `nix flake check --no-build`
+            - Evaluated both NixOS configurations.
+
+            Please review the lockfile diff before merging.
