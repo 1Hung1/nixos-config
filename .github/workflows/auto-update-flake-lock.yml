@@ -1,53 +1,34 @@
-
-name: Update flake.lock
+name: Update Flake Lock
 
 on:
   schedule:
-    - cron: "00 6 * * *" # Everyday at 03:17 UTC
-      timezone: Asia/Ho_Chi_Minh
-  workflow_dispatch:
-
-permissions:
-  contents: read
-
-concurrency:
-  group: auto-update-flake-lock
-  cancel-in-progress: false
+    # Runs every Monday at 00:00 UTC
+    - cron: '0 0 * * 1'
+  workflow_dispatch: # Allows you to trigger it manually via the GitHub UI
 
 jobs:
-  update:
+  update-flake:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-        with:
-          ref: main
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
+      # Installs Nix and configures it securely on the Ubuntu runner
       - name: Install Nix
-        uses: cachix/install-nix-action@v31
+        uses: determinateSystems/nix-installer-action@v14
+
+      # Optimizes builds by caching Nix store paths across runs
+      - name: Magic Nix Cache
+        uses: determinateSystems/magic-nix-cache-action@v8
+
+      # Handles the lockfile update, commit creation, and PR submission
+      - name: Update flake.lock
+        uses: determinateSystems/update-flake-lock-action@v24
         with:
-          github_access_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Update flake inputs
-        run: nix flake update
-
-      - name: Validate flake
-        run: |
-          nix flake check --no-build
-          nix eval --raw .#nixosConfigurations.solstice.config.system.build.toplevel.drvPath
-
-      - name: Create pull request
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: automated/update-flake-lock
-          delete-branch: true
-          title: "chore: update flake.lock"
-          commit-message: "chore: update flake.lock"
+          pr-title: "chore(nix): update flake.lock"
+          pr-labels: |
+            dependencies
+            nix
           body: |
             Automated update of all flake inputs.
 
