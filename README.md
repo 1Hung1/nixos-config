@@ -1,13 +1,13 @@
 # nixos-config
 
-My personal NixOS configuration, with a reusable `normal` configuration and host-specific settings for my laptop.
+My personal NixOS configuration, with a `normal` configuration for most machines and a `solstice` configuration for my laptop.
 
 ## Installation
 
 1. Clone this repository:
 
    ```bash
-   git clone <your-repository-url> ~/nixos
+   git clone https://github.com/1Hung1/nixos-config ~/nixos
    cd ~/nixos
    ```
 
