@@ -19,7 +19,7 @@
 
   # Add some of my needed programs
   home.packages = with pkgs; [
-  	google-chrome
-  	vesktop
+    google-chrome
+    vesktop
   ];
 }
