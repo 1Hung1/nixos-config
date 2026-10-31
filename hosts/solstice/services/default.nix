@@ -8,5 +8,8 @@
 
     # Set the hostname
     ./hostname.nix
+
+    # Enable flatpak support
+    ./flatpak.nix
   ];
 }
