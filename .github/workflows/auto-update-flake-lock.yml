@@ -38,7 +38,6 @@ jobs:
       - name: Validate flake
         run: |
           nix flake check --no-build
-          nix eval --raw .#nixosConfigurations.normal.config.system.build.toplevel.drvPath
           nix eval --raw .#nixosConfigurations.solstice.config.system.build.toplevel.drvPath
 
       - name: Create pull request
