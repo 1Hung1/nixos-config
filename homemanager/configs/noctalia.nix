@@ -13,7 +13,7 @@
         default = {
           start = [ "launcher" "active_window" "workspaces" "wallpaper" ];
           center = [ ];
-          end = [ "tray" "network" "battery" "clock" "session" ];
+          end = [ "wallpaper" "tray" "network" "battery" "clock" "session" ];
           margin_ends = 10;
           margin_edge = 6;
           capsule = true;
@@ -40,7 +40,7 @@
         wallpaper_scheme = "vibrant";
         templates = {
           builtin_ids = [ "foot" "gtk3" "gtk4" "kcolorscheme" "umbriel" ];
-          community_ids = [ "discord" "micro" ];
+          community_ids = [ "micro" ];
         };
       };
       wallpaper = {

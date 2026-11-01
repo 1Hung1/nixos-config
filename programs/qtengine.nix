@@ -31,7 +31,7 @@
       };
 
       misc = {
-        singleClickActivate = false;
+        singleClickActivate = true;
         menusHaveIcons = true;
         shortcutsForContextMenus = true;
       };

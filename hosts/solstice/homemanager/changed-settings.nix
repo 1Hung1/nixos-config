@@ -42,15 +42,4 @@
       "lsp.tabcompletion" = true;
     };
   };
-
-  # Add display settings for my TV
-  programs.umbriel.settings = {
-    output."HDMI-A-1" = {
-      scale = 2;
-      hdr = "on";
-      direct_scanout = true;
-      position = [ 0 1440 ];
-    };
-    output."eDP-1".position = [ 0 0 ];
-  };
 }
