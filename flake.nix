@@ -5,7 +5,7 @@
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     qtengine = { url = "github:kossLAN/qtengine"; inputs.nixpkgs.follows = "nixpkgs"; };
-    cachyos-settings = { url = "github:Daaboulex/cachyos-settings-nix" inputs.nixpkgs.follows = "nixpkgs" }
+    cachyos-settings = { url = "github:Daaboulex/cachyos-settings-nix"; inputs.nixpkgs.follows = "nixpkgs"; };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
   outputs =

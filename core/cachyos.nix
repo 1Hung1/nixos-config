@@ -1,9 +1,9 @@
 { inputs, pkgs, ... }:
 
 {
-  # Setup CachyOS settings
+  # Import CachyOS settings
   imports = [
-    inputs.cachyos-settings-nix.nixosModules.default
+    inputs.cachyos-settings.nixosModules.default
   ];
 
   # Enable CachyOS settings
@@ -23,10 +23,10 @@
 
   # CachyOS kernel configuration
   nixpkgs.overlays = [
-    nix-cachyos-kernel.overlays.pinned
+    inputs.nix-cachyos-kernel.overlays.pinned
   ];
 
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
   # Enable the binary caches
   nix.settings.extra-substituters = [ "https://cache.lantian.pub/lantian" ];
