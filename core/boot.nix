@@ -3,7 +3,7 @@
 {
   boot = {
     # Use latest kernel
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     kernelParams = [
       "loglevel=4"
       "udev.log-priority=4"
