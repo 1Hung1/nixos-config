@@ -10,11 +10,11 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1793066047,
-        "narHash": "sha256-EqxcLMBxUhlVrYIDklLgLwXFm5+3YaMUwSQdzxAGNVA=",
+        "lastModified": 1793531203,
+        "narHash": "sha256-sIgG3E2ikFfpydTgLBbrPG5bsT3L5XET2mGP0HjYuQM=",
         "owner": "Daaboulex",
         "repo": "cachyos-settings-nix",
-        "rev": "3bc95c190cf4389d2504abd611d7dde5874eb384",
+        "rev": "9ae4d4a60582b9633c3c991a0b7e211475f984d9",
         "type": "github"
       },
       "original": {
@@ -264,11 +264,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1792773339,
-        "narHash": "sha256-17eNBI5Khe4JZaRkL5hRGPWf8MZ6qv+bWAr4V8YeKBw=",
-        "rev": "3ec636362e1816bc2f0888fa0fa2c69f1bc9e504",
+        "lastModified": 1793341285,
+        "narHash": "sha256-LOv16TsMYV2/8BUYnhSxHkOASe7es2ORbqMeLlZJ8Hc=",
+        "rev": "1c89083e451e891152365b799595cf7790a43325",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1100280.3ec636362e18/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1105037.1c89083e451e/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -358,11 +358,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1793495967,
-        "narHash": "sha256-NrdBeAZiuqcbgH9kuiaGX5OyCpsDnlMWJL/TU25fRd8=",
+        "lastModified": 1793535503,
+        "narHash": "sha256-a0iAGbObusbMMu6sDgv6pp3/pmbZctwG3JrAiFfAAwA=",
         "owner": "noctalia-dev",
         "repo": "umbriel",
-        "rev": "eb449f45887d90d55319006880535c7c002b5656",
+        "rev": "0a0d03e6bab1b2c434c8b13ffe6c210a7e717a71",
         "type": "github"
       },
       "original": {
