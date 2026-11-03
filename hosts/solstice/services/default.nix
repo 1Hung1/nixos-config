@@ -8,5 +8,8 @@
 
     # Set the hostname
     ./hostname.nix
+
+    # Enable Avahi and mDNS
+    ./avahi-mdns.nix
   ];
 }
