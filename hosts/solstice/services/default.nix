@@ -11,5 +11,7 @@
 
     # Enable Avahi and mDNS
     ./avahi-mdns.nix
+
+    ./flatpak.nix
   ];
 }
