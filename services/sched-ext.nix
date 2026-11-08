@@ -1,9 +1,11 @@
+{ pkgs, ... }:
+
 {
-  # Extensible BPF scheduler (sched_ext). scx_lavd is latency/power aware,
-  # a good fit for a laptop. Alternatives: scx_bpfland (general desktop), scx_tickless (battery), scx_flash (low latency).
-  services.scx = {
+  # Extensible BPF scheduler (sched_ext). scx_bpfland (general desktop),
+  # a good fit for a laptop. Alternatives: scx_lavd (latency/power aware), scx_tickless (battery), scx_flash (low latency).
+  services.scx-loader = {
   	enable = true;
-  	scheduler = "scx_bpfland";
-  	extraArgs = [ "-m performance" ];
+  	schedsPackages = [ pkgs.scx.full ];
+  	config.default_sched = "scx_bpfland";
   };
 }
