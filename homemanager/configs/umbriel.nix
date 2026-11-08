@@ -60,13 +60,6 @@
         };
       };
 
-      # Display (outputs) settings
-      output.eDP-1 = {
-        scale = 1;
-        hdr = "auto";
-        direct_scanout = true;
-      };
-
       # Keybind settings
       keybinds = {
         # Application keybinds
@@ -122,12 +115,6 @@
           blur_optimized = false;
         }
       ];
-
-      # Event settings
-      events = {
-        lid_close = "umbriel msg output-disable:eDP-1";
-        lid_open = "umbriel msg output-enable:eDP-1";
-      };
 
       # Other settings
       screencast.disable_dynamic_confirmation = false;
