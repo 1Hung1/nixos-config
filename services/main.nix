@@ -12,12 +12,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # Little fix since the X11 bell crashes pipewire for some reason lol
-    extraConfig.pipewire."10-disable-x11-bell" = {
-      "context.properties" = {
-        "module.x11.bell" = false;
-      };
-    };
   };
   security.rtkit.enable = true;
 }
