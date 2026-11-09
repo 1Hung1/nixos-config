@@ -2,9 +2,7 @@
 
 {
   # Import CachyOS settings
-  imports = [
-    inputs.cachyos-settings.nixosModules.default
-  ];
+  imports = [ inputs.cachyos-settings.nixosModules.default ];
 
   # Enable CachyOS settings
   cachyos.settings = {
@@ -22,9 +20,7 @@
   };
 
   # CachyOS kernel configuration
-  nixpkgs.overlays = [
-    inputs.nix-cachyos-kernel.overlays.pinned
-  ];
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
 
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v3;
 
