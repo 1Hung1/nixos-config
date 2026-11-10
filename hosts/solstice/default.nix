@@ -7,5 +7,7 @@
 
     # Import my homemanager config
     ./homemanager/hung.nix
+
+    ./programs.nix
   ];
 }
