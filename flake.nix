@@ -18,10 +18,6 @@
           modules = [
             ./.
             home-manager.nixosModules.home-manager
-            {
-              system.configurationRevision =
-                self.rev or self.dirtyRev or null;
-            }
           ];
         };
         solstice = nixpkgs.lib.nixosSystem {
@@ -31,10 +27,6 @@
             ./.
             ./hosts/solstice
             home-manager.nixosModules.home-manager
-            {
-              system.configurationRevision =
-                self.rev or self.dirtyRev or null;
-            }
           ];
         };
       };
