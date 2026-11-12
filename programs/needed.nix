@@ -7,10 +7,4 @@
     curl
   ];
   programs.zsh.enable = true;
-
-  # Enable appimage support
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
 }
