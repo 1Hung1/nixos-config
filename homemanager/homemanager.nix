@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.stateVersion = "26.11"; # Match the nixpkgs version
+  home.stateVersion = "26.11";
 
   # User-specific packages go here
   home.packages = with pkgs; [
@@ -9,8 +9,6 @@
     nerd-fonts.jetbrains-mono
     adw-gtk3
   ];
-
-  # Import settings and configs
   imports = [ ./configs ];
 
   # Let Home Manager manage itself when changes are applied

@@ -1,22 +1,9 @@
-{
-  config,
-  lib,
-  modulesPath,
-  pkgs,
-  ...
-}:
+{ config, lib, modulesPath, pkgs, ... }:
 
 {
-  imports = [
-    (modulesPath + "/installer/scan/not-detected.nix")
-  ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-      size = 24576;
-    }
-  ];
+  swapDevices = [ { device = "/swapfile"; size = 24576; } ];
 
   # Hardware configuration
   hardware.facter.reportPath = ./facter.json;

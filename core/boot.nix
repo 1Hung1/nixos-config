@@ -2,7 +2,7 @@
 
 {
   boot = {
-    # Use latest kernel
+    # Use latest kernel and set kernel cmdline
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
     kernelParams = [
       "loglevel=4"
@@ -17,7 +17,7 @@
       options snd_usb_audio power_save=0
     '';
 
-    # Use the systemd-boot EFI boot loader
+    # Use systemd-boot boot loader
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot = {
       enable = true;

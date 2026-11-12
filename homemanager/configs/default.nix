@@ -9,7 +9,7 @@
     # Terminal and shell configuration
     ./terminal.nix
 
-    # Setup some user dirs and Wallpapers
+    # Setup user dirs and wallpapers
     ./user-dirs.nix
   ];
 }

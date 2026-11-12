@@ -1,3 +1,3 @@
 {
-  security.sudo.wheelNeedsPassword = false; # Disable the password
+  security.sudo.wheelNeedsPassword = false;
 }
