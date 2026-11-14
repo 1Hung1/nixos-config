@@ -30,19 +30,27 @@ My personal NixOS configuration, with a `normal` configuration for most machines
 
    If the file already exists in the imports list, you don't need to add it again.
 
-4. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
+4. Make the new file visible to Nix flakes:
 
-5. Build and activate the configuration:
+   ```bash
+   git add -N core/hardware-config.nix
+   ```
+
+   Nix flakes using Git only include files known to Git. This command makes the new file visible without staging its contents. Alternatively, use `git add core/hardware-config.nix` if you intend to stage it.
+
+5. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
+
+6. Build and activate the configuration:
 
    ```bash
    sudo nixos-rebuild switch --flake ~/nixos#normal
    ```
 
-6. Reboot if necessary and verify that your system works as expected.
+7. Reboot if necessary and verify that your system works as expected.
 
 ## Notes
 
 - `normal` is intended to be adapted for different machines. You must generate and review your own hardware configuration before using it.
 - `hosts/solstice/` contains my laptop-specific configuration modules.
 - Back up your existing configuration before replacing hardware settings.
-- This repository is a personal configuration, not a universal installer. Review all settings before applying them to your system.
+- This repository is a personal configuration, not a universal installer. Review all settings before applying them.
