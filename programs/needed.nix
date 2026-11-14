@@ -5,6 +5,7 @@
     micro
     wget
     curl
+    git
   ];
   programs.zsh.enable = true;
 }
