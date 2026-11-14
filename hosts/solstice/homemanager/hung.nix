@@ -1,3 +1,8 @@
 {
-  home-manager.users.hung.imports = [ ./changed-settings.nix ];
+  home-manager.users.hung.imports = [
+    ./umbriel.nix
+    ./shell.nix
+    ./packages.nix
+    ./git.nix
+  ];
 }
