@@ -15,4 +15,6 @@
   };
   security.rtkit.enable = true;
   services.speechd.enable = false;
+  # TEMP
+  services.flatpak.enable = true;
 }
