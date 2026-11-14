@@ -16,13 +16,5 @@
     extraModprobeConfig = ''
       options snd_usb_audio power_save=0
     '';
-
-    # Use systemd-boot boot loader
-    loader.efi.canTouchEfiVariables = true;
-    loader.systemd-boot = {
-      enable = true;
-      consoleMode = "max";
-    };
-    loader.timeout = lib.mkDefault 5;
   };
 }

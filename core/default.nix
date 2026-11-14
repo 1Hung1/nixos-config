@@ -1,9 +1,10 @@
 {
   imports = [
-  	./boot.nix
+  	./kernel.nix
+  	./cachyos.nix
+  	./bootloader.nix
   	./nix.nix
   	./etc.nix
-  	./cachyos.nix
   	# ./hardware-config.nix
   ];
 }
