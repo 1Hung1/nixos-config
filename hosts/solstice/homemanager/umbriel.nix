@@ -22,6 +22,7 @@
         QT_QPA_PLATFORMTHEME = "kde";
         QT_QPA_PLATFORMTHEME_QT6 = "kde";
         FROSTSTRAP_FORCE_WAYLAND = "1";
+        SDL_VIDEODRIVER = "wayland";
       };
     };
   };
