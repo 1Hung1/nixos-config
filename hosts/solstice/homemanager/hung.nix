@@ -4,5 +4,6 @@
     ./shell.nix
     ./packages.nix
     ./git.nix
+    ./c-sharp-development.nix
   ];
 }
