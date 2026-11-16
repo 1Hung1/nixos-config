@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 
 {
-  # Declarative Zsh configuration
+  # zsh configuration
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -18,7 +18,7 @@
     useTheme = "hul10";
   };
 
-  # Foot settings
+  # foot terminal settings
   programs.foot.enable = true;
 
   xdg.configFile."foot/foot.ini".text = ''
@@ -42,11 +42,11 @@
     blur=yes
   '';
 
-  # Fastfetch settings
+  # fastfetch configuration
   programs.fastfetch.enable = true;
   xdg.configFile."fastfetch/config.jsonc".source = "${pkgs.fastfetch}/share/fastfetch/presets/examples/10.jsonc";
 
-  # Declarative micro editor configuration
+  # micro configuration
   programs.micro = {
     enable = true;
     settings = {
@@ -54,5 +54,12 @@
       tabstospaces = true;
       tabsize = 2;
     };
+  };
+
+  # nix-my-shell configuration
+  programs.nix-your-shell = {
+    enable = true;
+    enableZshIntegration = true;
+    nix-output-monitor.enable = true;
   };
 }
