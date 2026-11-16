@@ -4,7 +4,7 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      configurationLimit = 20;
+      configurationLimit = 10;
       consoleMode = "max";
     };
     efi = {
@@ -13,4 +13,5 @@
     };
     timeout = lib.mkDefault 5;
   };
+  services.bootvine.enable = true;
 }
