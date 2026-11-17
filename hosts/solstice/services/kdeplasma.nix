@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   # Enable Plasma 
   services = {
