@@ -44,6 +44,7 @@
           buttons = [ "minimize" "maximize" "close" ];
           button_corner_radius = -1;
         };
+        shadow.enabled = false;
       };
 
       # Input settings

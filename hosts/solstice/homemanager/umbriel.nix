@@ -6,11 +6,13 @@
         scale = 1;
         hdr = "auto";
         direct_scanout = true;
+        workspace_axis = "horizontal";
       };
       output.HDMI-A-1 = {
         scale = 2;
         hdr = "auto";
         direct_scanout = true;
+        workspace_axis = "horizontal";
       };
       events = {
         lid_close = "umbriel msg output-disable:eDP-1";
