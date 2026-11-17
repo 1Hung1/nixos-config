@@ -48,9 +48,9 @@
 
       # Input settings
       input = {
-        middle_click_paste = false;
+        middle_click_paste = true;
         client_window_drag = true;
-        keyboard = { numlock_toggle = true; };
+        keyboard.numlock_toggle = true;
         touchpad = {
           tap = true;
           natural_scroll = true;
@@ -83,11 +83,11 @@
         "Mod+3" = "workspace-switch 3";
         "Mod+4" = "workspace-switch 4";
         "Mod+5" = "workspace-switch 5";
-        "Mod+Ctrl+1" = "window-move-to-workspace 1";
-        "Mod+Ctrl+2" = "window-move-to-workspace 2";
-        "Mod+Ctrl+3" = "window-move-to-workspace 3";
-        "Mod+Ctrl+4" = "window-move-to-workspace 4";
-        "Mod+Ctrl+5" = "window-move-to-workspace 5";
+        "Mod+Shift+1" = "window-move-to-workspace 1";
+        "Mod+Shift+2" = "window-move-to-workspace 2";
+        "Mod+Shift+3" = "window-move-to-workspace 3";
+        "Mod+Shift+4" = "window-move-to-workspace 4";
+        "Mod+Shift+5" = "window-move-to-workspace 5";
 
         # Screenshots
         "Print" = "spawn noctalia msg screenshot-region";
