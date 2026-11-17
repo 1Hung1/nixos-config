@@ -77,6 +77,7 @@
         "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
         "Mod+Shift+F" = "window-toggle-fullscreen";
         "Mod+F" = "window-toggle-maximize";
+        "Mod+O" = "overview-toggle";
 
         # Workspaces keybinds
         "Mod+1" = "workspace-switch 1";
