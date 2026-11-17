@@ -9,7 +9,7 @@
     enable = true;
 
     settings = {
-      config_version = 20
+      config_version = 20;
       bar = {
         order = [ "default" ];
         default = {
