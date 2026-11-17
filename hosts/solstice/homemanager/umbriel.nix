@@ -24,6 +24,9 @@
         FROSTSTRAP_FORCE_WAYLAND = "1";
         SDL_VIDEODRIVER = "wayland";
       };
+      keybinds = {
+        "Mod+Print" = "spawn noctalia msg screenshot-region --annotate";
+      };
     };
   };
 }
