@@ -9,9 +9,11 @@
     enable = true;
 
     settings = {
+      config_version = 20
       bar = {
+        order = [ "default" ];
         default = {
-          start = [ "launcher" "active_window" "workspaces" "wallpaper" ];
+          start = [ "launcher" "taskbar" "active_window" "workspaces" ];
           center = [ ];
           end = [ "wallpaper" "tray" "network" "battery" "clock" "session" ];
           margin_ends = 10;
@@ -28,6 +30,7 @@
         font_family = "JetBrainsMono Nerd Font Mono";
         telemetry_enabled = true;
         polkit_agent = true;
+        panel_anchor_bar = "default";
         password_style = "random";
         show_close_buttons = false;
         launcher = { default_view = "all"; show_app_actions = true; };
@@ -36,6 +39,7 @@
       };
       theme = {
         mode = "dark";
+        shell_mode = "dark";
         source = "wallpaper";
         wallpaper_scheme = "vibrant";
         templates = {
