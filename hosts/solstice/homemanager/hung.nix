@@ -4,5 +4,6 @@
     ./shell.nix
     ./packages.nix
     ./git.nix
+    ./fcitx5.nix
   ];
 }
