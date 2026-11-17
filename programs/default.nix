@@ -1,7 +1,7 @@
 {
   imports = [
-  	./needed.nix
-  	./desktop.nix
-  	./qtengine.nix
+    ./needed.nix
+    ./desktop.nix
+    ./qtengine.nix
   ];
 }

@@ -40,12 +40,14 @@ in
         PrivateKeyFile = "/etc/wireguard/privatekey";
         FirewallMark = 51820;
       };
-      wireguardPeers = [{
-        PublicKey = "HZskAyd3XqoY8Xu3uc6r9yjsICZdjiwDcDGdMLMdVyo=";
-        Endpoint = "194.180.33.7:51820";
-        AllowedIPs = [ "0.0.0.0/0" ];
-        PersistentKeepalive = 25;
-      }];
+      wireguardPeers = [
+        {
+          PublicKey = "HZskAyd3XqoY8Xu3uc6r9yjsICZdjiwDcDGdMLMdVyo=";
+          Endpoint = "194.180.33.7:51820";
+          AllowedIPs = [ "0.0.0.0/0" ];
+          PersistentKeepalive = 25;
+        }
+      ];
     };
   };
 
@@ -53,16 +55,20 @@ in
     "10-wg0" = {
       matchConfig.Name = "wg0";
       address = [ "10.2.0.2/32" ];
-      routes = [{
-        Destination = "0.0.0.0/0";
-        Table = 51820;
-      }];
-      routingPolicyRules = [{
-        FirewallMark = 51820;
-        InvertRule = true;
-        Table = 51820;
-        Priority = 100;
-      }];
+      routes = [
+        {
+          Destination = "0.0.0.0/0";
+          Table = 51820;
+        }
+      ];
+      routingPolicyRules = [
+        {
+          FirewallMark = 51820;
+          InvertRule = true;
+          Table = 51820;
+          Priority = 100;
+        }
+      ];
       networkConfig = {
         DNS = [ "10.2.0.1" ];
         DNSDefaultRoute = true;

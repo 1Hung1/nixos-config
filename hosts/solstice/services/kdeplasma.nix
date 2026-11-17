@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # Enable Plasma 
+  # Enable Plasma
   services = {
     desktopManager.plasma6.enable = true;
     xserver.enable = true;

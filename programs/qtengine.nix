@@ -7,7 +7,7 @@
     breeze
     breeze-icons
   ];
-  
+
   programs.qtengine = {
     enable = true;
 

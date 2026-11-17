@@ -44,7 +44,8 @@
 
   # fastfetch configuration
   programs.fastfetch.enable = true;
-  xdg.configFile."fastfetch/config.jsonc".source = "${pkgs.fastfetch}/share/fastfetch/presets/examples/10.jsonc";
+  xdg.configFile."fastfetch/config.jsonc".source =
+    "${pkgs.fastfetch}/share/fastfetch/presets/examples/10.jsonc";
 
   # micro configuration
   programs.micro = {

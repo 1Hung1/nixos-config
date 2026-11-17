@@ -13,9 +13,21 @@
       bar = {
         order = [ "default" ];
         default = {
-          start = [ "launcher" "taskbar" "active_window" "workspaces" ];
+          start = [
+            "launcher"
+            "taskbar"
+            "active_window"
+            "workspaces"
+          ];
           center = [ ];
-          end = [ "wallpaper" "tray" "network" "battery" "clock" "session" ];
+          end = [
+            "wallpaper"
+            "tray"
+            "network"
+            "battery"
+            "clock"
+            "session"
+          ];
           margin_ends = 10;
           margin_edge = 6;
           capsule = true;
@@ -33,8 +45,13 @@
         panel_anchor_bar = "default";
         password_style = "random";
         show_close_buttons = false;
-        launcher = { default_view = "all"; show_app_actions = true; };
-        panel = { transparency_mode = "glass"; };
+        launcher = {
+          default_view = "all";
+          show_app_actions = true;
+        };
+        panel = {
+          transparency_mode = "glass";
+        };
         umbriel_audio_provider_enabled = true;
       };
       theme = {
@@ -43,7 +60,13 @@
         source = "wallpaper";
         wallpaper_scheme = "vibrant";
         templates = {
-          builtin_ids = [ "foot" "gtk3" "gtk4" "kcolorscheme" "umbriel" ];
+          builtin_ids = [
+            "foot"
+            "gtk3"
+            "gtk4"
+            "kcolorscheme"
+            "umbriel"
+          ];
           community_ids = [ "micro" ];
         };
       };

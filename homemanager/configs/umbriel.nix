@@ -1,4 +1,4 @@
-{ inputs, ... }: 
+{ inputs, ... }:
 
 {
   # Import Umbriel home-manager plugin
@@ -41,7 +41,11 @@
           height = 30;
           font = "sans 10";
           button_position = "right";
-          buttons = [ "minimize" "maximize" "close" ];
+          buttons = [
+            "minimize"
+            "maximize"
+            "close"
+          ];
           button_corner_radius = -1;
         };
         shadow.enabled = false;
@@ -96,14 +100,24 @@
       };
 
       # Layout settings
-      layout = { mode = "stacking"; gap = 6; };
+      layout = {
+        mode = "stacking";
+        gap = 6;
+      };
 
       # Window and layer rules settings
       window_rule = [
-        { blur = true; blur_optimized = true; }
+        {
+          blur = true;
+          blur_optimized = true;
+        }
         {
           match.title = "^notificationtoasts_.+_desktop";
-          default_position = { x = 0; y = 0; anchor = "bottom_right"; };
+          default_position = {
+            x = 0;
+            y = 0;
+            anchor = "bottom_right";
+          };
           default_focused = false;
           default_pinned = true;
         }
