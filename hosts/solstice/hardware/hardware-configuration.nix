@@ -11,8 +11,7 @@
 
   swapDevices = [
     {
-      device = "/swapfile";
-      size = 24576;
+      device = "/dev/vg0/swap";
     }
   ];
 
