@@ -11,7 +11,7 @@
 
   swapDevices = [
     {
-      device = "/dev/vg0/swap";
+      device = "/dev/mapper/nixos-swap";
     }
   ];
 
