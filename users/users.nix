@@ -24,6 +24,7 @@
       "render"
       "video"
       "audio"
+      "input"
     ];
     shell = pkgs.zsh;
     # Make sure to run passwd to set a password for the account
