@@ -28,15 +28,20 @@
       mkHost = host:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-    
+
           specialArgs = {
             inherit inputs;
           };
-    
+
           modules = [
             ./.
             home-manager.nixosModules.home-manager
           ] ++ (if host == null then [] else [ host ]);
+
+          {
+            system.configurationRevision =
+              self.rev or self.dirtyRev or null;
+          }
         };
     in
     {
