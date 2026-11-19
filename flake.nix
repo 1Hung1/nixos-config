@@ -25,7 +25,8 @@
       ...
     }@inputs:
     let
-      mkHost = host:
+      mkHost =
+        host:
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
 
@@ -37,10 +38,10 @@
             ./.
             home-manager.nixosModules.home-manager
             {
-              system.configurationRevision =
-                self.rev or self.dirtyRev or null;
+              system.configurationRevision = self.rev or self.dirtyRev or null;
             }
-          ] ++ (if host == null then [] else [ host ]);
+          ]
+          ++ (if host == null then [ ] else [ host ]);
         };
     in
     {
