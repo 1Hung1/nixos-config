@@ -1,6 +1,6 @@
 # nixos-config
 
-My personal NixOS configuration, with a `normal` configuration for most machines and a `solstice` configuration for my laptop.
+My personal NixOS configuration, featuring a `normal` configuration for generic machines, `solstice` for my laptop, and `helios` for my mini PC.
 
 ## Installation
 
@@ -52,5 +52,6 @@ My personal NixOS configuration, with a `normal` configuration for most machines
 
 - `normal` is intended to be adapted for different machines. You must generate and review your own hardware configuration before using it.
 - `hosts/solstice/` contains my laptop-specific configuration modules.
+- `hosts/helios/` contains my minipc-specific configuration modules.
 - Back up your existing configuration before replacing hardware settings.
 - This repository is a personal configuration, not a universal installer. Review all settings before applying them.
