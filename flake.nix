@@ -43,6 +43,7 @@
       nixosConfigurations = {
         normal = mkHost null;
         solstice = mkHost ./hosts/solstice;
+        helios = mkHost ./hosts/helios;
       };
     };
 }
