@@ -29,10 +29,13 @@
         # Cursor settings
         cursor-style = "block";
         cursor-style-blink = false;
+        custom-shader = "${./ghostty-cursor-animation.glsl}";
   
         # Other stuff
         background-opacity = "0.65";
         window-inherit-working-directory = false;
+        theme = "noctalia";
+        app-notifications = false;
       };
     };
     micro = {
