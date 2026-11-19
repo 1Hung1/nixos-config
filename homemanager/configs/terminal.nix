@@ -18,29 +18,18 @@
     useTheme = "hul10";
   };
 
-  # foot terminal settings
-  programs.foot.enable = true;
-
-  xdg.configFile."foot/foot.ini".text = ''
-    include=~/.config/foot/themes/noctalia
-
-    [main]
-    font=JetBrainsMono Nerd Font Mono:size=12
-    font-bold=JetBrainsMono Nerd Font Mono:style=Bold:size=12
-    font-italic=JetBrainsMono Nerd Font Mono:style=Italic:size=12
-    font-bold-italic=JetBrainsMono Nerd Font Mono:style=Bold Italic:size=12
-
-    [cursor]
-    style=block
-    blink=no
-
-    [csd]
-    preferred=server
-
-    [colors-dark]
-    alpha=0.65
-    blur=yes
-  '';
+  programs.ghostty = {
+    enable = true;
+    enableZshIntegration = true;
+    systemd.enable = true;
+    settings = {
+      font-family = "JetBrainsMono Nerd Font Mono";
+      font-size = 12;
+      cursor-style = "block";
+      cursor-style-blink = false;
+      background-opacity = "0.65";
+    };
+  };
 
   # fastfetch configuration
   programs.fastfetch.enable = true;

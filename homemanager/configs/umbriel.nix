@@ -68,7 +68,7 @@
       # Keybind settings
       keybinds = {
         # Application keybinds
-        "Mod+Return" = "spawn foot";
+        "Mod+Return" = "spawn ghostty";
         "Mod+D" = "spawn noctalia msg panel-toggle launcher";
         "Mod+Q" = "window-close";
         "Ctrl+Alt+Delete" = "session-quit";
