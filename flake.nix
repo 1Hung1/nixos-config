@@ -24,25 +24,25 @@
       home-manager,
       ...
     }@inputs:
+    let
+      mkHost = host:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+    
+          specialArgs = {
+            inherit inputs;
+          };
+    
+          modules = [
+            ./.
+            home-manager.nixosModules.home-manager
+          ] ++ (if host == null then [] else [ host ]);
+        };
+    in
     {
       nixosConfigurations = {
-        normal = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./.
-            home-manager.nixosModules.home-manager
-          ];
-        };
-        solstice = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./.
-            ./hosts/solstice
-            home-manager.nixosModules.home-manager
-          ];
-        };
+        normal = mkHost null;
+        solstice = mkHost ./hosts/solstice;
       };
     };
 }
