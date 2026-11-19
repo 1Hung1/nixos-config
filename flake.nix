@@ -36,12 +36,11 @@
           modules = [
             ./.
             home-manager.nixosModules.home-manager
+            {
+              system.configurationRevision =
+                self.rev or self.dirtyRev or null;
+            }
           ] ++ (if host == null then [] else [ host ]);
-
-          {
-            system.configurationRevision =
-              self.rev or self.dirtyRev or null;
-          }
         };
     in
     {
