@@ -20,6 +20,10 @@
       url = "github:nix-community/lanzaboote/v1.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     import-tree.url = "git+https://github.com/denful/import-tree?ref=main";
   };
   outputs =
@@ -48,6 +52,7 @@
               ./users
             ])
             home-manager.nixosModules.home-manager
+            inputs.agenix.nixosModules.default
             {
               system.configurationRevision = self.rev or self.dirtyRev or null;
             }

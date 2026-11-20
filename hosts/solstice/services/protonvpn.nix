@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 let
   vpnToggle = pkgs.writeShellScriptBin "vpn" ''
@@ -37,14 +37,12 @@ in
         Name = "wg0";
       };
       wireguardConfig = {
-        PrivateKeyFile = "/etc/wireguard/privatekey";
+        PrivateKeyFile = config.age.secrets.wireguard-protonvpn-key.path;
         FirewallMark = 51820;
       };
       wireguardPeers = [{
         PublicKey = "rgPoLtUhJ946CVYPkp8r3VL8KHUYSmTIrPo7Wsw9sn4=";
         Endpoint = "151.243.141.165:51820";
-        # Route IPv6 into the tunnel too, otherwise IPv6 traffic leaks
-        # past the VPN over the native connection.
         AllowedIPs = [
           "0.0.0.0/0"
           "::/0"
@@ -64,9 +62,6 @@ in
           Table = 51820;
         }
         {
-          # Fail closed: unmarked IPv6 is sent to wg0 instead of the
-          # native link. Without an IPv6 address on wg0 it is dropped,
-          # so it can't leak while the tunnel is down or up.
           Destination = "::/0";
           Table = 51820;
         }
