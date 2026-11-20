@@ -30,7 +30,6 @@
     clean.enable = true;
     clean.extraArgs = "--keep-since 3d --keep 3";
     clean.dates = "daily";
-    flake = "/home/hung/nixos"; # change hung to your username if needed
   };
 
   # Allow unfree packages
