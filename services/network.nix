@@ -7,7 +7,7 @@
   networking.wireless.iwd.enable = true;
   networking.wireless.iwd.settings.General.EnableNetworkConfiguration = false; # Let systemd-networkd handle DHCP instead of iwd
   networking.firewall.enable = lib.mkDefault true;
-  networking.hostName = lib.mkDefault "nixos-btw"; # Change if you need to
+  networking.hostName = lib.mkDefault "normal"; # Change if you need to
 
   # DNS configuration
   services.resolved = {
