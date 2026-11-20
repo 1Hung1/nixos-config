@@ -16,12 +16,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    import-tree.url = "git+https://github.com/denful/import-tree?ref=main";
   };
   outputs =
     {
       self,
       nixpkgs,
       home-manager,
+      import-tree,
       ...
     }@inputs:
     let
@@ -35,13 +37,18 @@
           };
 
           modules = [
-            ./.
+            (import-tree [
+              ./core
+              ./services
+              ./programs
+              ./users
+            ])
             home-manager.nixosModules.home-manager
             {
               system.configurationRevision = self.rev or self.dirtyRev or null;
             }
           ]
-          ++ (if host == null then [ ] else [ host ]);
+          ++ (if host == null then [ ] else [ (import-tree host) ]);
         };
     in
     {

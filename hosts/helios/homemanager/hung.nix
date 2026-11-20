@@ -1,8 +1,5 @@
+{ inputs, lib, ... }:
+
 {
-  home-manager.users.hung.imports = [
-    ./umbriel.nix
-    ./shell.nix
-    ./packages.nix
-    ./git.nix
-  ];
+  home-manager.users.hung.imports = [ (inputs.import-tree.initFilter (lib.hasSuffix ".nix") ./_configs) ];
 }

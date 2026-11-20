@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 {
   home.stateVersion = "26.11";
@@ -9,7 +9,7 @@
     nerd-fonts.jetbrains-mono
     adw-gtk3
   ];
-  imports = [ ./configs ];
+  imports = [ (inputs.import-tree.initFilter (lib.hasSuffix ".nix") ./_configs) ];
 
   # Let Home Manager manage itself when changes are applied
   programs.home-manager.enable = true;

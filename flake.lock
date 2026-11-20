@@ -151,6 +151,22 @@
         "type": "github"
       }
     },
+    "import-tree": {
+      "locked": {
+        "lastModified": 1788467110,
+        "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
+        "ref": "main",
+        "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
+        "revCount": 104,
+        "type": "git",
+        "url": "https://github.com/denful/import-tree"
+      },
+      "original": {
+        "ref": "main",
+        "type": "git",
+        "url": "https://github.com/denful/import-tree"
+      }
+    },
     "nix-cachyos-kernel": {
       "inputs": {
         "flake-compat": "flake-compat_2",
@@ -280,11 +296,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1795133615,
-        "narHash": "sha256-ZC4b67NqHX20uEovhsupa7CiSnPuPC1GJMuzxtbAuCU=",
+        "lastModified": 1795136763,
+        "narHash": "sha256-lIouTxXrduKCn/Q2GAk+DHGbpZCGla5UvvxhbnJ8uhc=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "6fdf8858a1d3b1926df23e63a1ac1e75b6599586",
+        "rev": "0e32beeeb3d3fedb6d1da720abcfe6fe4f4fad75",
         "type": "github"
       },
       "original": {
@@ -318,6 +334,7 @@
       "inputs": {
         "cachyos-settings": "cachyos-settings",
         "home-manager": "home-manager",
+        "import-tree": "import-tree",
         "nix-cachyos-kernel": "nix-cachyos-kernel",
         "nixpkgs": "nixpkgs_2",
         "noctalia": "noctalia",
@@ -358,11 +375,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1795097411,
-        "narHash": "sha256-5xwCFlqRi05cOg4XjHJzNO1X9vphO0ZFx0uT+48iEDg=",
+        "lastModified": 1795141235,
+        "narHash": "sha256-lKbXUaUBQAl+RItOkXtPNu0rYK8RjpBxmV7avgzhKvg=",
         "owner": "noctalia-dev",
         "repo": "umbriel",
-        "rev": "13332d406563a1bd9b58026c0483a6dc47244daf",
+        "rev": "e5f72e1eadc9990670eb89a4b0ca1564fadf1668",
         "type": "github"
       },
       "original": {
