@@ -26,10 +26,10 @@ My personal NixOS configuration, featuring a `normal` configuration for generic 
 3. Make the new files visible to Nix flakes:
 
    ```bash
-   git add -N hosts/mymachine
+   git add -N hosts/normal
    ```
 
-   Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add hosts/mymachine` if you intend to stage them.
+   Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add hosts/normal` if you intend to stage them.
 
 4. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
 
@@ -43,7 +43,7 @@ My personal NixOS configuration, featuring a `normal` configuration for generic 
 
 ## Notes
 
-- `normal` is the shared, hardware-less template. It cannot build a full system until a hardware configuration is created or provided.
+- `normal` is the generic host. It only shows up in `nixosConfigurations` once `hosts/normal/` exists, so a fresh clone can be evaluated and checked without a hardware configuration.
 - Hardware configuration lives in `hosts/<host>/hardware/` (eg. `hosts/normal/hardware`). Don't put it in `core/`: that directory is shared by every host, so its filesystem definitions would conflict with the per-host ones.
 - `hosts/solstice/` contains my laptop-specific configuration modules.
 - `hosts/helios/` contains my minipc-specific configuration modules.
