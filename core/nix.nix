@@ -7,12 +7,10 @@
         "flakes"
         "pipe-operators"
       ];
-      auto-optimise-store = true;
       trusted-users = [
         "root"
         "@wheel"
       ];
-      abort-on-warn = false;
 
       # Noctalia & Umbriel binary caches setup
       extra-substituters = [
@@ -24,12 +22,15 @@
         "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
       ];
     };
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-      persistent = true;
-    };
+  };
+
+  # Enable nh for a nix helper
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 3d --keep 3";
+    clean.dates = "daily";
+    flake = "/home/hung/nixos"; # change hung to your username if needed
   };
 
   # Allow unfree packages
