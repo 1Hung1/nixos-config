@@ -13,11 +13,11 @@
       credential.helper = [
         ""
         "!${pkgs.writeShellScript "git-credential-github" ''
-          if [ \"$1\" = get ]; then
-            printf 'username=x-access-token\n'
+          if [ "$1" = get ]; then
+            printf 'username=1Hung1\n'
             printf 'password='
-            cat ${osConfig.age.secrets.github-token.path}
-            printf '\n'
+            tr -d '\r\n' < ${osConfig.age.secrets.github-token.path}
+            printf '\n\n'
           fi
         ''}"
       ];
