@@ -43,7 +43,12 @@ in
       wireguardPeers = [{
         PublicKey = "rgPoLtUhJ946CVYPkp8r3VL8KHUYSmTIrPo7Wsw9sn4=";
         Endpoint = "151.243.141.165:51820";
-        AllowedIPs = [ "0.0.0.0/0" ];
+        # Route IPv6 into the tunnel too, otherwise IPv6 traffic leaks
+        # past the VPN over the native connection.
+        AllowedIPs = [
+          "0.0.0.0/0"
+          "::/0"
+        ];
         PersistentKeepalive = 25;
       }];
     };
@@ -53,10 +58,19 @@ in
     "10-wg0" = {
       matchConfig.Name = "wg0";
       address = [ "10.2.0.2/32" ];
-      routes = [{
-        Destination = "0.0.0.0/0";
-        Table = 51820;
-      }];
+      routes = [
+        {
+          Destination = "0.0.0.0/0";
+          Table = 51820;
+        }
+        {
+          # Fail closed: unmarked IPv6 is sent to wg0 instead of the
+          # native link. Without an IPv6 address on wg0 it is dropped,
+          # so it can't leak while the tunnel is down or up.
+          Destination = "::/0";
+          Table = 51820;
+        }
+      ];
       routingPolicyRules = [{
         FirewallMark = 51820;
         InvertRule = true;
