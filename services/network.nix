@@ -10,11 +10,6 @@
   networking.hostName = lib.mkDefault "nixos-btw"; # Change if you need to
 
   # DNS configuration
-  networking.nameservers = [
-    "1.1.1.1"
-    "2606:4700:4700::1111"
-  ];
-
   services.resolved = {
     enable = true;
 

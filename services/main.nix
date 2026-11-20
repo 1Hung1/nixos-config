@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   # Disable some unneeded stuff and enable some needed stuff
   services.displayManager.ly.enable = true;

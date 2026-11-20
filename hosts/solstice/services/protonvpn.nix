@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   vpnToggle = pkgs.writeShellScriptBin "vpn" ''

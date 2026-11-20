@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   boot = {
     # Add intel iGPU settings to the current cmdline
