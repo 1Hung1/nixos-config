@@ -14,29 +14,16 @@ My personal NixOS configuration, featuring a `normal` configuration for generic 
 2. Create a host directory and generate a hardware configuration for the machine:
 
    ```bash
-   mkdir -p ~/nixos/hosts/mymachine/hardware
+   mkdir -p ~/nixos/hosts/normal/hardware
    sudo nixos-generate-config --show-hardware-config \
-     > ~/nixos/hosts/mymachine/hardware/hardware-configuration.nix
+     > ~/nixos/hosts/normal/hardware/hardware-configuration.nix
    ```
 
    **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
 
    Modules are imported automatically: `import-tree` picks up every `.nix` file under `core/`, `services/`, `programs/`, `users/`, and the host directory, so there are no import lists to maintain.
 
-3. Register the host in `flake.nix`:
-
-   ```nix
-   nixosConfigurations = {
-     normal = mkHost null;
-     solstice = mkHost ./hosts/solstice;
-     helios = mkHost ./hosts/helios;
-     mymachine = mkHost ./hosts/mymachine;
-   };
-   ```
-
-   `normal` is the hardware-less template: it provides the shared configuration but has no root filesystem, so it only becomes buildable once it gets its own host directory.
-
-4. Make the new files visible to Nix flakes:
+3. Make the new files visible to Nix flakes:
 
    ```bash
    git add -N hosts/mymachine
@@ -44,20 +31,20 @@ My personal NixOS configuration, featuring a `normal` configuration for generic 
 
    Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add hosts/mymachine` if you intend to stage them.
 
-5. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
+4. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
 
-6. Build and activate the configuration:
+5. Build and activate the configuration:
 
    ```bash
-   sudo nixos-rebuild switch --flake ~/nixos#mymachine
+   sudo nixos-rebuild switch --flake ~/nixos#normal
    ```
 
-7. Reboot if necessary and verify that your system works as expected.
+6. Reboot if necessary and verify that your system works as expected.
 
 ## Notes
 
-- `normal` is the shared, hardware-less template. It cannot build a full system until a host directory with a hardware configuration is created.
-- Hardware configuration lives in `hosts/<host>/hardware/`. Don't put it in `core/`: that directory is shared by every host, so its filesystem definitions would conflict with the per-host ones.
+- `normal` is the shared, hardware-less template. It cannot build a full system until a hardware configuration is created or provided.
+- Hardware configuration lives in `hosts/<host>/hardware/` (eg. `hosts/normal/hardware`). Don't put it in `core/`: that directory is shared by every host, so its filesystem definitions would conflict with the per-host ones.
 - `hosts/solstice/` contains my laptop-specific configuration modules.
 - `hosts/helios/` contains my minipc-specific configuration modules.
 - Back up your existing configuration before replacing hardware settings.
