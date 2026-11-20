@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, osConfig, ... }:
 
 {
   # Terminal configuration
@@ -9,7 +9,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       shellAliases = {
-        rebuild-system = lib.mkDefault "sudo nixos-rebuild switch --flake ~/nixos#normal";
+        rebuild-system = "sudo nixos-rebuild switch --flake ~/nixos#${osConfig.networking.hostName}";
       };
     };
     oh-my-posh = {
