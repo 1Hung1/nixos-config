@@ -11,46 +11,53 @@ My personal NixOS configuration, featuring a `normal` configuration for generic 
    cd ~/nixos
    ```
 
-2. Generate a hardware configuration for your machine:
+2. Create a host directory and generate a hardware configuration for the machine:
 
    ```bash
-   sudo nixos-generate-config --show-hardware-config | tee ~/nixos/core/hardware-config.nix
+   mkdir -p ~/nixos/hosts/mymachine/hardware
+   sudo nixos-generate-config --show-hardware-config \
+     > ~/nixos/hosts/mymachine/hardware/hardware-configuration.nix
    ```
 
    **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
 
-3. Make sure `core/hardware-config.nix` is imported by `core/default.nix`:
+   Modules are imported automatically: `import-tree` picks up every `.nix` file under `core/`, `services/`, `programs/`, `users/`, and the host directory, so there are no import lists to maintain.
+
+3. Register the host in `flake.nix`:
 
    ```nix
-   imports = [
-     ./hardware-config.nix # Uncomment this line
-     # Other imports...
-   ];
+   nixosConfigurations = {
+     normal = mkHost null;
+     solstice = mkHost ./hosts/solstice;
+     helios = mkHost ./hosts/helios;
+     mymachine = mkHost ./hosts/mymachine;
+   };
    ```
 
-   If the file already exists in the imports list, you don't need to add it again.
+   `normal` is the hardware-less template: it provides the shared configuration but has no root filesystem, so it only becomes buildable once it gets its own host directory.
 
-4. Make the new file visible to Nix flakes:
+4. Make the new files visible to Nix flakes:
 
    ```bash
-   git add -N core/hardware-config.nix
+   git add -N hosts/mymachine
    ```
 
-   Nix flakes using Git only include files known to Git. This command makes the new file visible without staging its contents. Alternatively, use `git add core/hardware-config.nix` if you intend to stage it.
+   Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add hosts/mymachine` if you intend to stage them.
 
 5. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
 
 6. Build and activate the configuration:
 
    ```bash
-   sudo nixos-rebuild switch --flake ~/nixos#normal
+   sudo nixos-rebuild switch --flake ~/nixos#mymachine
    ```
 
 7. Reboot if necessary and verify that your system works as expected.
 
 ## Notes
 
-- `normal` is intended to be adapted for different machines. You must generate and review your own hardware configuration before using it.
+- `normal` is the shared, hardware-less template. It cannot build a full system until a host directory with a hardware configuration is created.
+- Hardware configuration lives in `hosts/<host>/hardware/`. Don't put it in `core/`: that directory is shared by every host, so its filesystem definitions would conflict with the per-host ones.
 - `hosts/solstice/` contains my laptop-specific configuration modules.
 - `hosts/helios/` contains my minipc-specific configuration modules.
 - Back up your existing configuration before replacing hardware settings.
