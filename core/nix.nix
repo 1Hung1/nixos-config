@@ -11,6 +11,7 @@
         "root"
         "@wheel"
       ];
+      auto-optimise-store = true;
 
       # Noctalia & Umbriel binary caches setup
       extra-substituters = [
