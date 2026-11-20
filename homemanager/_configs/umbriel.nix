@@ -82,6 +82,7 @@
         "Mod+Shift+F" = "window-toggle-fullscreen";
         "Mod+F" = "window-toggle-maximize";
         "Mod+O" = "overview-toggle";
+        "Mod+V" = "spawn noctalai msg panel clipboard";
 
         # Workspaces keybinds
         "Mod+1" = "workspace-switch 1";
