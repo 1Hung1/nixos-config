@@ -47,15 +47,18 @@
             {
               system.configurationRevision = self.rev or self.dirtyRev or null;
             }
-          ]
-          ++ (if host == null then [ ] else [ (import-tree host) ]);
+            (import-tree host)
+          ];
         };
     in
     {
       nixosConfigurations = {
-        normal = mkHost null;
         solstice = mkHost ./hosts/solstice;
         helios = mkHost ./hosts/helios;
+      }
+      // nixpkgs.lib.optionalAttrs (builtins.pathExists ./hosts/normal) {
+        # The generic host only exists once its hardware config has been generated.
+        normal = mkHost ./hosts/normal;
       };
     };
 }
