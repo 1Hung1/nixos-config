@@ -97,6 +97,7 @@
 
         # Screenshots
         "Print" = "spawn noctalia msg screenshot-region";
+        "Mod+Print" = "spawn noctalia msg screenshot-region --annotate";
       };
 
       # Layout settings
@@ -133,6 +134,14 @@
       ];
 
       # Other settings
+      environment = {
+        ELECTRON_OZONE_PLATFORM_HINT = "auto";
+        QT_QPA_PLATFORM = "wayland";
+        QT_QPA_PLATFORMTHEME = "qtengine";
+        QT_QPA_PLATFORMTHEME_QT6 = "qtengine";
+        FROSTSTRAP_FORCE_WAYLAND = "1";
+        SDL_VIDEODRIVER = "wayland";
+      };
       screencast.disable_dynamic_confirmation = false;
     };
   };
