@@ -4,14 +4,14 @@
   boot.loader = {
     systemd-boot = {
       enable = true;
-      configurationLimit = 10;
+      configurationLimit = 4;
       consoleMode = "max";
     };
     efi = {
       canTouchEfiVariables = true;
       efiSysMountPoint = "/boot";
     };
-    timeout = lib.mkDefault 5;
+    timeout = lib.mkDefault 2;
   };
   services.bootvine.enable = true;
 }

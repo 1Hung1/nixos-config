@@ -16,5 +16,24 @@
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/var/lib/sbctl";
+    configurationLimit = 4;
+
+    # Setup auto generation and auto enroll for keys
+    autoEnrollKeys = {
+      enable = true;
+      includeFirmwareBuiltinKeys = true;
+      autoReboot = true;
+    };
+    autoGenerateKeys.enable = true;
+
+    # Setup measured boot
+    measuredBoot = {
+      enable = true;
+      pcrs = [
+        0
+        4
+        7
+      ];
+    };
   };
 }
