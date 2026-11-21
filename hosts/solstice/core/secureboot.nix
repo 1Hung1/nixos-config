@@ -31,7 +31,6 @@
       enable = true;
       pcrs = [
         0
-        4
         7
       ];
       autoCryptenroll = {
