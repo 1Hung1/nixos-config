@@ -34,7 +34,7 @@
         4
         7
       ];
-      measuredBoot.autoCryptenroll = {
+      autoCryptenroll = {
         enable = true;
         device = "/dev/disk/by-uuid/aec0d40b-3d60-4e02-a8e7-1ff22e110ec3";
       };
