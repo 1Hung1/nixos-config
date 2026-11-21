@@ -1,6 +1,6 @@
 {
   fileSystems."/" = {
-    device = "/dev/mapper/nixos-root";
+    device = "/dev/mapper/linux-root";
     fsType = "btrfs";
     options = [
       "noatime"
@@ -11,7 +11,7 @@
   };
 
   fileSystems."/nix" = {
-    device = "/dev/mapper/nixos-root";
+    device = "/dev/mapper/linux-root";
     fsType = "btrfs";
     options = [
       "subvol=nix"
@@ -23,7 +23,7 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/mapper/nixos-root";
+    device = "/dev/mapper/linux-root";
     fsType = "btrfs";
     options = [
       "subvol=home"
