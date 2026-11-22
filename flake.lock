@@ -30,11 +30,11 @@
         "std": "std"
       },
       "locked": {
-        "lastModified": 1795018249,
-        "narHash": "sha256-0+fxrBbExy3u7Zzkslx54qcWui1X03XOmf9zsFhbd0s=",
+        "lastModified": 1795271164,
+        "narHash": "sha256-GqclJf2r5SRN74uqSVEzc+AbE92cDAFN7OQdzukBiIM=",
         "owner": "Daaboulex",
         "repo": "cachyos-settings-nix",
-        "rev": "3a73faccf0f57f3814127bc11e05ec7b6b320111",
+        "rev": "1dffe761d51ca731d0e0f440c4cc3ba0dd33132e",
         "type": "github"
       },
       "original": {
@@ -206,16 +206,15 @@
       "locked": {
         "lastModified": 1788467110,
         "narHash": "sha256-ljEMTXP/rH0tOvDzc9gzwww6KcHRPRnEHzd9lK48V7s=",
-        "ref": "main",
+        "owner": "denful",
+        "repo": "import-tree",
         "rev": "eb1b52eaecc57f7c136d07ae8a93e724dfecac46",
-        "revCount": 104,
-        "type": "git",
-        "url": "https://github.com/denful/import-tree"
+        "type": "github"
       },
       "original": {
-        "ref": "main",
-        "type": "git",
-        "url": "https://github.com/denful/import-tree"
+        "owner": "denful",
+        "repo": "import-tree",
+        "type": "github"
       }
     },
     "lanzaboote": {
@@ -326,11 +325,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1795085501,
-        "narHash": "sha256-S5keGWzaKpuXo9MNoIC2FfTIuTyTnx8P4NhYJMEsTLI=",
+        "lastModified": 1795234589,
+        "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "0bb8272318b4ca41bf0edc6224df3e3e3046b70d",
+        "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
         "type": "github"
       },
       "original": {
@@ -371,11 +370,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1795265505,
-        "narHash": "sha256-0kDZmaAV6t0L6QvicJ+coHE7l+iU3vhvduvhT5nh81w=",
+        "lastModified": 1795307809,
+        "narHash": "sha256-uZCuVgLbSm3mfdnuzZo8Fk1bW9eaII2Ko4yO91BBf04=",
         "owner": "noctalia-dev",
         "repo": "noctalia",
-        "rev": "356f4edca7e18b9b5178bd8add1e56d8c709bc50",
+        "rev": "2b54131c85b041980ebed3c410496b181eccf0d0",
         "type": "github"
       },
       "original": {
@@ -495,11 +494,11 @@
         "xdg-desktop-portal-umbriel": "xdg-desktop-portal-umbriel"
       },
       "locked": {
-        "lastModified": 1795257318,
-        "narHash": "sha256-ZC6bSqATYP07yEvGJVP+v8+bkZYRPoBWXiLOuRKiNzo=",
+        "lastModified": 1795306323,
+        "narHash": "sha256-qqmMok9cbwYZ3g+9lQxsqCbTcvbFWfgXsCbmTfeksPQ=",
         "owner": "noctalia-dev",
         "repo": "umbriel",
-        "rev": "c634d946b50e7b2540c0d7e108ffa36d7c27adc8",
+        "rev": "08e2711f65910c18d997c22a36c5937d9e011ced",
         "type": "github"
       },
       "original": {
