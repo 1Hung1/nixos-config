@@ -40,7 +40,7 @@
       };
       font = {
         name = "JetBrainsMono Nerd Font Mono";
-        size = 12; 
+        size = 12;
       };
       extraConfig = ''
         include themes/noctalia.conf
@@ -66,6 +66,5 @@
   xdg.configFile."fastfetch/config.jsonc".source =
     "${pkgs.fastfetch}/share/fastfetch/presets/examples/10.jsonc";
   # Kitty cursor animation file
-  xdg.configFile."kitty/shaders/cursor-warp.slang".source =
-    ./kitty-cursor.slang;
+  xdg.configFile."kitty/shaders/cursor-warp.slang".source = ./kitty-cursor.slang;
 }

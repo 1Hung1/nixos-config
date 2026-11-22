@@ -16,6 +16,6 @@
       crypttabExtraOpts = [
         "tpm2-device=auto"
       ];
-    };    
+    };
   };
 }

@@ -6,7 +6,19 @@ let
   helios = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC5g8AXIO7r2zFWBHBRTCfl1iuI7fAK9NqpJADr+a6if root@nixos-btw";
 in
 {
-  "wireguard-protonvpn-key.age".publicKeys = [ hung solstice helios ];
-  "login-password-hash.age".publicKeys = [ hung solstice helios ];
-  "github-token.age".publicKeys = [ hung solstice helios ];
+  "wireguard-protonvpn-key.age".publicKeys = [
+    hung
+    solstice
+    helios
+  ];
+  "login-password-hash.age".publicKeys = [
+    hung
+    solstice
+    helios
+  ];
+  "github-token.age".publicKeys = [
+    hung
+    solstice
+    helios
+  ];
 }

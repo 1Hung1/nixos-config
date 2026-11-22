@@ -40,15 +40,17 @@ in
         PrivateKeyFile = config.age.secrets.wireguard-protonvpn-key.path;
         FirewallMark = 51820;
       };
-      wireguardPeers = [{
-        PublicKey = "rgPoLtUhJ946CVYPkp8r3VL8KHUYSmTIrPo7Wsw9sn4=";
-        Endpoint = "151.243.141.165:51820";
-        AllowedIPs = [
-          "0.0.0.0/0"
-          "::/0"
-        ];
-        PersistentKeepalive = 25;
-      }];
+      wireguardPeers = [
+        {
+          PublicKey = "rgPoLtUhJ946CVYPkp8r3VL8KHUYSmTIrPo7Wsw9sn4=";
+          Endpoint = "151.243.141.165:51820";
+          AllowedIPs = [
+            "0.0.0.0/0"
+            "::/0"
+          ];
+          PersistentKeepalive = 25;
+        }
+      ];
     };
   };
 
@@ -66,12 +68,14 @@ in
           Table = 51820;
         }
       ];
-      routingPolicyRules = [{
-        FirewallMark = 51820;
-        InvertRule = true;
-        Table = 51820;
-        Priority = 100;
-      }];
+      routingPolicyRules = [
+        {
+          FirewallMark = 51820;
+          InvertRule = true;
+          Table = 51820;
+          Priority = 100;
+        }
+      ];
       networkConfig = {
         DNS = [ "10.2.0.1" ];
         DNSDefaultRoute = true;
