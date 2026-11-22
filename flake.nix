@@ -24,7 +24,7 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    import-tree.url = "git+https://github.com/denful/import-tree?ref=main";
+    import-tree.url = "github:denful/import-tree";
   };
   outputs =
     {
