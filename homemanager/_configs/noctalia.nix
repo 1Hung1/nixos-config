@@ -61,7 +61,7 @@
         wallpaper_scheme = "vibrant";
         templates = {
           builtin_ids = [
-            "ghostty"
+            "kitty"
             "gtk3"
             "gtk4"
             "kcolorscheme"
