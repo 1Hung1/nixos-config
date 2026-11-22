@@ -2,7 +2,7 @@
 
 {
   boot = {
-    # Use latest kernel and set kernel cmdline
+    # Use CachyOS latest kernel and set kernel cmdline
     kernelPackages = pkgs.linuxPackages_cachyos-rc;
     kernelParams = [
       "loglevel=4"

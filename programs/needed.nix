@@ -1,6 +1,7 @@
 { pkgs, ... }:
 
 {
+  # System programs/executables go here
   environment.systemPackages = with pkgs; [
     micro
     wget

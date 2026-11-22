@@ -30,7 +30,7 @@
     LIBVA_DRIVER_NAME = "iHD";
   };
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  nixpkgs.hostPlatform = "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = config.hardware.enableRedistributableFirmware;
   hardware.enableRedistributableFirmware = true;
 }

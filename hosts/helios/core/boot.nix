@@ -13,8 +13,5 @@
 
     # Set no timeout
     loader.timeout = 0;
-
-    # LVM setup
-    initrd.services.lvm.enable = true;
   };
 }

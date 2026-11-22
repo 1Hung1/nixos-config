@@ -13,13 +13,13 @@
       ];
       auto-optimise-store = true;
 
-      # Noctalia & Umbriel binary caches setup (umbriel uses the same cache as noctalia's)
+      # Noctalia & Umbriel binary caches setup
       extra-substituters = [ "https://noctalia.cachix.org" ];
       extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
     };
   };
 
-  # Enable nh for a nix helper
+  # Enable nh (a nix helper)
   programs.nh = {
     enable = true;
     clean.enable = true;

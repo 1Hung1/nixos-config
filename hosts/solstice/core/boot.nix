@@ -10,8 +10,7 @@
     # Set no timeout
     loader.timeout = 0;
 
-    # LVM and LUKS setup
-    initrd.services.lvm.enable = true;
+    # LUKS setup
     initrd.luks.devices."cryptroot" = {
       device = "/dev/disk/by-uuid/aec0d40b-3d60-4e02-a8e7-1ff22e110ec3";
       crypttabExtraOpts = [
