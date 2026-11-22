@@ -3,7 +3,7 @@
 {
   boot = {
     # Kernel configuration
-    kernelPackages = lib.mkForce pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-x86_64-v2;
+    kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
     # Add intel iGPU settings to the current cmdline
     kernelParams = [
       "i915.enable_psr=1"

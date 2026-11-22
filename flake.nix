@@ -15,7 +15,7 @@
       url = "github:Daaboulex/cachyos-settings-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v1.2.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -31,6 +31,7 @@
       self,
       nixpkgs,
       home-manager,
+      chaotic,
       import-tree,
       ...
     }@inputs:
@@ -53,6 +54,7 @@
             ])
             home-manager.nixosModules.home-manager
             inputs.agenix.nixosModules.default
+            chaotic.nixosModules.default
             {
               system.configurationRevision = self.rev or self.dirtyRev or null;
             }

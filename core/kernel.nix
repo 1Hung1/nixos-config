@@ -3,7 +3,7 @@
 {
   boot = {
     # Use latest kernel and set kernel cmdline
-    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_cachyos-rc;
     kernelParams = [
       "loglevel=4"
       "udev.log-priority=4"
