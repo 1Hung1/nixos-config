@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs }:
 
 {
   boot = {
     # Use CachyOS latest kernel and set kernel cmdline
-    kernelPackages = pkgs.linuxPackages_cachyos-rc;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "loglevel=4"
       "udev.log-priority=4"
