@@ -17,26 +17,34 @@
       enableZshIntegration = true;
       useTheme = "hul10";
     };
-    ghostty = {
+    kitty = {
       enable = true;
-      enableZshIntegration = true;
-      systemd.enable = true;
+      enableGitIntegration = true;
+      shellIntegration = {
+        enableZshIntegration = true;
+        mode = "no-rc no-cursor no-cwd";
+      };
       settings = {
-        # Font settings
-        font-family = "JetBrainsMono Nerd Font Mono";
-        font-size = 12;
-
         # Cursor settings
-        cursor-style = "block";
-        cursor-style-blink = false;
-        custom-shader = "${./ghostty-cursor-animation.glsl}";
+        cursor_shape = "block";
+        cursor_blink_interval = 0;
+
+        # Cursor animations
+        cursor_trail = 1;
+        custom_shaders = "cursor-warp";
 
         # Other stuff
-        background-opacity = "0.65";
-        window-inherit-working-directory = false;
-        theme = "noctalia";
-        app-notifications = false;
+        background_opacity = "0.65";
+        enable_audio_bell = false;
+        scrollback_lines = 10000;
       };
+      font = {
+        name = "JetBrainsMono Nerd Font Mono";
+        size = 12; 
+      };
+      extraConfig = ''
+        include themes/noctalia.conf
+      '';
     };
     micro = {
       enable = true;
@@ -57,4 +65,7 @@
   # Extra stuff
   xdg.configFile."fastfetch/config.jsonc".source =
     "${pkgs.fastfetch}/share/fastfetch/presets/examples/10.jsonc";
+  # Kitty cursor animation file
+  xdg.configFile."kitty/shaders/cursor-warp.slang".source =
+    ./kitty-cursor.slang;
 }
