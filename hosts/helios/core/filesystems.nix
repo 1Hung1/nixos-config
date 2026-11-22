@@ -33,7 +33,7 @@
       ];
     };
     "/boot" = {
-      device = "/dev/nvme0n1p1";
+      device = "/dev/sda1";
       fsType = "vfat";
     };
   };
