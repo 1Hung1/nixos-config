@@ -46,14 +46,6 @@
         include themes/noctalia.conf
       '';
     };
-    micro = {
-      enable = true;
-      settings = {
-        colorscheme = "noctalia";
-        tabstospaces = true;
-        tabsize = 2;
-      };
-    };
     nix-your-shell = {
       enable = true;
       enableZshIntegration = true;
