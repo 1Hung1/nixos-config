@@ -1,51 +1,79 @@
 # nixos-config
 
-My personal NixOS configuration, featuring a `normal` configuration for generic machines, `solstice` for my laptop, and `helios` for my mini PC.
+My personal NixOS configuration, featuring a dendritic pattern layout. This configuration uses the **dendritic pattern** — a feature-oriented module system where every `.nix` file is a self-contained module, auto-imported via `import-tree`. No central `imports` lists are maintained.
 
-## Installation
+The configuration manages two x86_64-linux hosts:
 
-1. Clone this repository:
+- **`solstice`** — laptop with dGPU, LUKS full-disk encryption, WireGuard/ProtonVPN
+- **`helios`** — mini PC with iGPU, WireGuard/ProtonVPN
 
-   ```bash
-   git clone https://github.com/1Hung1/nixos-config ~/nixos
-   cd ~/nixos
-   ```
+Host-agnostic modules live in `modules/`, organized by concern:
 
-2. Create a host directory and generate a hardware configuration for the machine:
+| Directory | Purpose |
+|---|---|
+| `modules/core/` | Bootloader, system timezone/locale, Nix settings, kernel |
+| `modules/services/` | Display manager, network, keyring, BPF scheduler |
+| `modules/programs/` | Desktop (KDE/Qt), CLI tools, Qt packages |
+| `modules/users/` | Home Manager + user `hung` configuration |
+| `modules/home/` | Home Manager modules: base, cursor, micro, nocturia, packages, terminal, umbriel |
+| `modules/hosts/common.nix` | Shared config imported by all hosts |
+| `modules/hosts/solstice/` | Laptop-specific modules (boot, filesystems, HM, etc.) |
+| `modules/hosts/helios/` | Mini PC-specific modules (boot, filesystems, HM, etc.) |
 
-   ```bash
-   mkdir -p ~/nixos/hosts/normal/hardware
-   sudo nixos-generate-config --show-hardware-config \
-     > ~/nixos/hosts/normal/hardware/hardware-configuration.nix
-   ```
+## Key Pattern — Dendritic
 
-   **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
+Rather than per-host directories with manual `imports` lists, every `.nix` file under `modules/` is a self-contained flake-parts module. The `import-tree` tool recursively discovers and imports all `.nix` files, so adding a new feature means adding a single file — nothing else needs to change.
 
-   Modules are imported automatically: `import-tree` picks up every `.nix` file under `core/`, `services/`, `programs/`, `users/`, and the host directory, so there are no import lists to maintain.
+**`flake.nix`** (relevant snippet):
 
-3. Make the new files visible to Nix flakes:
+```nix
+outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  imports = [
+    inputs.flake-parts.flakeModules.modules
+    (inputs.import-tree ./modules)
+  ];
+};
+```
 
-   ```bash
-   git add -N hosts/normal
-   ```
+**Benefits:**
 
-   Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add hosts/normal` if you intend to stage them.
+- No merge conflicts on shared `imports` lists
+- Each concern (ssh, bluetooth, desktop) lives in one file across all hosts
+- File path serves as documentation — files can be freely renamed or split
+- Cross-class cohesion: one file can configure NixOS, Home Manager, and Darwin together
 
-4. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
+## Hosts
 
-5. Build and activate the configuration:
+### `solstice` (laptop)
 
-   ```bash
-   sudo nixos-rebuild switch --flake ~/nixos#normal
-   ```
+Built from `modules/hosts/solstice/` modules plus shared `modules/hosts/common.nix`. Includes:
 
-6. Reboot if necessary and verify that your system works as expected.
+- Bootloader (systemd-boot + lancaboote/secureboot)
+- Filesystems (btrfs root + nix + home subvolumes)
+- Kernel (Cachyos) + CPU microcode + audio config
+- Networking (Networkd + iwd + resolved DNS)
+- Services (ly DM, pipewire audio, sched-ext/scx, flatpak, oo7 keyring)
+- WireGuard/ProtonVPN, sbctl, battery charge thresholds
+- Home Manager: nocturia + umbriel bars, settings, keybinds
 
-## Notes
+### `helios` (mini PC)
 
-- `normal` is the generic host. It only shows up in `nixosConfigurations` once `hosts/normal/` exists, so a fresh clone can be evaluated and checked without a hardware configuration.
-- Hardware configuration lives in `hosts/<host>/hardware/` (eg. `hosts/normal/hardware`). Don't put it in `core/`: that directory is shared by every host, so its filesystem definitions would conflict with the per-host ones.
-- `hosts/solstice/` contains my laptop-specific configuration modules.
-- `hosts/helios/` contains my minipc-specific configuration modules.
-- Back up your existing configuration before replacing hardware settings.
-- This repository is a personal configuration, not a universal installer. Review all settings before applying them.
+Built from `modules/hosts/helios/` modules plus shared `modules/hosts/common.nix`. Includes:
+
+- Bootloader (systemd-boot + lanzaboote)
+- Filesystems (btrfs root + nix + home subvolumes)
+- Kernel (latest linuxPackages_latest) + iGPU config
+- Networking (Networkd + iwd + resolved DNS)
+- Services (same as solstice but with HDMI-A-1 output config for umbriel)
+- WireGuard/ProtonVPN
+- Home Manager: nocturia + umbriel with HDMI-A-1 output, color settings
+
+## Usage
+
+```bash
+# Build solstice
+sudo nixos-rebuild switch --flake .#solstice
+
+# Build helios
+sudo nixos-rebuild switch --flake .#helios
+```
