@@ -22,6 +22,9 @@
         extraModprobeConfig = ''
           options snd_usb_audio power_save=0
         '';
+
+        # Remove un-needed modules from initrd
+        initrd.includeDefaultModules = false;
       };
     };
 }
