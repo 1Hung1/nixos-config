@@ -5,17 +5,25 @@
 
 {
   flake.modules.nixos.common.imports = with config.flake.modules.nixos; [
-    bootloader
+    # Core stuff
     system
+    bootloader
     kernel
     nix
-    services
-    network
-    keyring
-    scheduler
-    desktop
-    cli
-    qt
+
+    # Services
+    services-main
+    services-audio
+    services-network
+    services-keyring
+    services-scheduler
+
+    # Programs
+    programs-desktop
+    programs-cli
+    programs-qtengine
+
+    # Home Manager and users
     home-manager
     hung
   ];

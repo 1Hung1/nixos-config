@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.qt =
+  flake.modules.nixos.programs-qt =
     { inputs, pkgs, ... }:
     {
       imports = [ inputs.qtengine.nixosModules.default ];

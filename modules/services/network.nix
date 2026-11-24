@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.network =
+  flake.modules.nixos.services-network =
     { lib, ... }:
     {
       # Enable networking

@@ -3,9 +3,6 @@
   ...
 }:
 
-let
-  homeModules = config.flake.modules.homeManager;
-in
 {
   flake.modules.nixos.hung =
     { pkgs, ... }:
@@ -25,15 +22,15 @@ in
       };
 
       # The user's cross-host Home Manager aspects.
-      home-manager.users.hung.imports = [
-        homeModules.base
-        homeModules.cursor
-        homeModules.micro
-        homeModules.noctalia
-        homeModules.packages
-        homeModules.terminal
-        homeModules.umbriel
-        homeModules.user-dirs
+      home-manager.users.hung.imports = with config.flake.modules.homeManager; [
+        base
+        cursor
+        micro
+        noctalia
+        packages
+        terminal
+        umbriel
+        user-dirs
       ];
     };
 }
