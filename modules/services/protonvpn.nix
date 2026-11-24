@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.solstice =
+  flake.modules.nixos.services-protonvpn =
     { config, pkgs, ... }:
     let
       vpnToggle = pkgs.writeShellScriptBin "vpn" ''

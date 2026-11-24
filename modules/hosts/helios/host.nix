@@ -21,6 +21,7 @@
       }
       config.flake.modules.nixos.common
       config.flake.modules.nixos.helios
+      config.flake.modules.nixos.services-protonvpn
       {
         home-manager.users.hung.imports = [ config.flake.modules.homeManager.helios ];
       }
