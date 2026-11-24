@@ -5,6 +5,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    import-tree.url = "github:denful/import-tree";
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     qtengine = {
@@ -20,52 +25,14 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    import-tree.url = "github:denful/import-tree";
   };
+
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      chaotic,
-      import-tree,
-      ...
-    }@inputs:
-    let
-      mkHost =
-        host:
-        nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-
-          specialArgs = {
-            inherit inputs;
-          };
-
-          modules = [
-            (import-tree [
-              ./core
-              ./services
-              ./programs
-              ./users
-            ])
-            home-manager.nixosModules.home-manager
-            inputs.agenix.nixosModules.default
-            chaotic.nixosModules.default
-            {
-              system.configurationRevision = self.rev or self.dirtyRev or null;
-            }
-            (import-tree host)
-          ];
-        };
-    in
-    {
-      nixosConfigurations = {
-        solstice = mkHost ./hosts/solstice;
-        helios = mkHost ./hosts/helios;
-      }
-      // nixpkgs.lib.optionalAttrs (builtins.pathExists ./hosts/normal) {
-        # The generic host only exists once its hardware config has been generated.
-        normal = mkHost ./hosts/normal;
-      };
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [
+        inputs.flake-parts.flakeModules.modules
+        (inputs.import-tree ./modules)
+      ];
     };
 }

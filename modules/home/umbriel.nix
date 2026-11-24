@@ -1,0 +1,150 @@
+{
+  flake.modules.homeManager.umbriel = { inputs, ... }:
+    {
+      # Import Umbriel home-manager plugin
+      imports = [ inputs.umbriel.homeModules.default ];
+
+      # Set everything up
+      programs.umbriel = {
+        enable = true;
+
+        settings = {
+          include.optional.files = [ "~/.config/umbriel/noctalia.toml" ];
+
+          # General settings
+          general = {
+            autostart = [ "noctalia" ];
+            mod_key = "Super";
+            xwayland = true;
+            xwayland_native_resolution = true;
+            show_cheatsheet = true;
+            focus_on_activate = true;
+            honor_restored_maximize = true;
+          };
+
+          # Appearance settings
+          appearance = {
+            prefer_no_csd = true;
+            border_width = 4;
+            corner_radius = 14;
+            blur = {
+              enabled = true;
+              optimized = true;
+              passes = 3;
+              radius = 5;
+              noise = 0.02;
+              contrast = 0.9;
+              saturation = 1.1;
+            };
+            title_bar = {
+              mode = "on";
+              height = 30;
+              font = "sans 10";
+              button_position = "right";
+              buttons = [
+                "minimize"
+                "maximize"
+                "close"
+              ];
+              button_corner_radius = -1;
+            };
+            shadow.enabled = false;
+          };
+
+          # Input settings
+          input = {
+            middle_click_paste = true;
+            client_window_drag = true;
+            keyboard.numlock_toggle = true;
+            touchpad = {
+              tap = true;
+              natural_scroll = true;
+              accel_profile = "flat";
+              disable_while_typing = false;
+              disable_on_external_mouse = false;
+            };
+          };
+
+          # Keybind settings
+          keybinds = {
+            # Application keybinds
+            "Mod+Return" = "spawn kitty";
+            "Mod+D" = "spawn noctalia msg panel-toggle launcher";
+            "Mod+Q" = "window-close";
+            "Ctrl+Alt+Delete" = "session-quit";
+            "Mod+I" = "spawn noctalia msg settings-toggle";
+
+            # Focus and movement keybinds
+            "Alt+Tab" = "spawn noctalia msg window-switcher hold";
+            "Mod+Up" = "window-focus-previous";
+            "Mod+Down" = "window-focus-next";
+            "Mod+Ctrl+F" = "window-toggle-maximize-to-edges";
+            "Mod+Shift+F" = "window-toggle-fullscreen";
+            "Mod+F" = "window-toggle-maximize";
+            "Mod+O" = "overview-toggle";
+            "Mod+V" = "spawn noctalia msg panel-toggle clipboard";
+
+            # Workspaces keybinds
+            "Mod+1" = "workspace-switch 1";
+            "Mod+2" = "workspace-switch 2";
+            "Mod+3" = "workspace-switch 3";
+            "Mod+4" = "workspace-switch 4";
+            "Mod+5" = "workspace-switch 5";
+            "Mod+Shift+1" = "window-move-to-workspace 1";
+            "Mod+Shift+2" = "window-move-to-workspace 2";
+            "Mod+Shift+3" = "window-move-to-workspace 3";
+            "Mod+Shift+4" = "window-move-to-workspace 4";
+            "Mod+Shift+5" = "window-move-to-workspace 5";
+
+            # Screenshots
+            "Print" = "spawn noctalia msg screenshot-region";
+            "Mod+Print" = "spawn noctalia msg screenshot-region --annotate";
+          };
+
+          # Layout settings
+          layout = {
+            mode = "stacking";
+            gap = 6;
+          };
+
+          # Window and layer rules settings
+          window_rule = [
+            {
+              blur = true;
+              blur_optimized = true;
+            }
+            {
+              match.title = "^notificationtoasts_.+_desktop";
+              default_position = {
+                x = 0;
+                y = 0;
+                anchor = "bottom_right";
+              };
+              default_focused = false;
+              default_pinned = true;
+            }
+          ];
+          layer_rule = [
+            {
+              match.namespace = "^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd|desktop-widget-[^\"]*)$";
+              blur = true;
+              blur_ignore_alpha = 0.1;
+              blur_popups = true;
+              blur_optimized = false;
+            }
+          ];
+
+          # Other settings
+          environment = {
+            ELECTRON_OZONE_PLATFORM_HINT = "auto";
+            QT_QPA_PLATFORM = "wayland";
+            QT_QPA_PLATFORMTHEME = "qtengine";
+            QT_QPA_PLATFORMTHEME_QT6 = "qtengine";
+            FROSTSTRAP_FORCE_WAYLAND = "1";
+            SDL_VIDEODRIVER = "wayland";
+          };
+          screencast.disable_dynamic_confirmation = false;
+        };
+      };
+    };
+}
