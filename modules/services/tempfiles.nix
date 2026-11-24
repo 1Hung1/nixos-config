@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.helios = {
+  flake.modules.nixos.services-tempfiles = {
     systemd.tmpfiles.settings."10-noctalia-chromium"."/etc/chromium/policies/managed/noctalia-color.json".f =
       {
         user = "hung";

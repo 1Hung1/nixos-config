@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.helios =
+  flake.modules.homeManager.programs-git =
     { osConfig, pkgs, ... }:
     {
       # Enable and setup git
