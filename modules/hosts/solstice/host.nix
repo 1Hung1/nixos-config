@@ -12,7 +12,6 @@ let
       system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
     }
   ];
-
   hostModules = with config.flake.modules.nixos; [
     common
     solstice
@@ -20,11 +19,13 @@ let
     services-protonvpn
     services-openssh
     services-tempfiles
-    programs-git
     hung-password
     {
       home-manager.users.hung.imports = [ config.flake.modules.homeManager.solstice ];
     }
+  ];
+  homeModules = with config.flake.modules.homeManager; [
+    programs-git
   ];
 in
 {
@@ -36,4 +37,5 @@ in
     };
 
     modules = baseModules ++ hostModules;
+  };
 }
