@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.scheduler =
+  flake.modules.nixos.services-scheduler =
     { pkgs, ... }:
     {
       # Extensible BPF scheduler (sched_ext). scx_bpfland (general desktop),
