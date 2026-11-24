@@ -4,7 +4,7 @@
     {
       # System programs/executables go here
       environment.systemPackages = with pkgs; [
-        micro
+        helix
         wget
         curl
         git
