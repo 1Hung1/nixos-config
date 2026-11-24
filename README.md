@@ -4,8 +4,8 @@ My personal NixOS configuration, featuring a dendritic pattern layout. This conf
 
 The configuration manages two x86_64-linux hosts:
 
-- **`solstice`** — laptop with dGPU, LUKS full-disk encryption, WireGuard/ProtonVPN
-- **`helios`** — mini PC with iGPU, WireGuard/ProtonVPN
+- **`solstice`** — my daily driver laptop with LUKS full-disk encryption + LVM
+- **`helios`** — my mini pc with LVM
 
 Host-agnostic modules live in `modules/`, organized by concern:
 
@@ -13,9 +13,9 @@ Host-agnostic modules live in `modules/`, organized by concern:
 |---|---|
 | `modules/core/` | Bootloader, system timezone/locale, Nix settings, kernel |
 | `modules/services/` | Display manager, network, keyring, BPF scheduler |
-| `modules/programs/` | Desktop (KDE/Qt), CLI tools, Qt packages |
+| `modules/programs/` | Desktop (Umbriel+Noctalia), CLI tools, Qt packages |
 | `modules/users/` | Home Manager + user `hung` configuration |
-| `modules/home/` | Home Manager modules: base, cursor, micro, nocturia, packages, terminal, umbriel |
+| `modules/home/` | Home Manager modules: base, cursor, micro, noctalia, packages, terminal, umbriel |
 | `modules/hosts/common.nix` | Shared config imported by all hosts |
 | `modules/hosts/solstice/` | Laptop-specific modules (boot, filesystems, HM, etc.) |
 | `modules/hosts/helios/` | Mini PC-specific modules (boot, filesystems, HM, etc.) |
@@ -42,38 +42,39 @@ outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } {
 - File path serves as documentation — files can be freely renamed or split
 - Cross-class cohesion: one file can configure NixOS, Home Manager, and Darwin together
 
-## Hosts
-
-### `solstice` (laptop)
-
-Built from `modules/hosts/solstice/` modules plus shared `modules/hosts/common.nix`. Includes:
-
-- Bootloader (systemd-boot + lancaboote/secureboot)
-- Filesystems (btrfs root + nix + home subvolumes)
-- Kernel (Cachyos) + CPU microcode + audio config
-- Networking (Networkd + iwd + resolved DNS)
-- Services (ly DM, pipewire audio, sched-ext/scx, flatpak, oo7 keyring)
-- WireGuard/ProtonVPN, sbctl, battery charge thresholds
-- Home Manager: nocturia + umbriel bars, settings, keybinds
-
-### `helios` (mini PC)
-
-Built from `modules/hosts/helios/` modules plus shared `modules/hosts/common.nix`. Includes:
-
-- Bootloader (systemd-boot + lanzaboote)
-- Filesystems (btrfs root + nix + home subvolumes)
-- Kernel (latest linuxPackages_latest) + iGPU config
-- Networking (Networkd + iwd + resolved DNS)
-- Services (same as solstice but with HDMI-A-1 output config for umbriel)
-- WireGuard/ProtonVPN
-- Home Manager: nocturia + umbriel with HDMI-A-1 output, color settings
-
 ## Usage
 
-```bash
-# Build solstice
-sudo nixos-rebuild switch --flake .#solstice
+1. Clone this repository:
 
-# Build helios
-sudo nixos-rebuild switch --flake .#helios
-```
+   ```bash
+   git clone https://github.com/1Hung1/nixos-config ~/nixos
+   cd ~/nixos
+   ```
+
+2. Create a host directory and generate a hardware configuration for the machine:
+
+   ```bash
+   mkdir -p ~/nixos/hosts/normal/hardware
+   sudo nixos-generate-config --show-hardware-config \
+     > ~/nixos/hosts/normal/hardware/hardware-configuration.nix
+   ```
+
+   **Important:** Run this on the NixOS installation you want to configure. It detects your current hardware and mounted filesystems. Review the generated file before proceeding.
+
+3. Make the new files visible to Nix flakes:
+
+   ```bash
+   git add -N modules/hosts/normal
+   ```
+
+   Nix flakes using Git only include files known to Git. This command makes the new files visible without staging their contents. Alternatively, use `git add modules/hosts/normal` if you intend to stage them.
+
+4. Review the configuration before activating it. In particular, check the root filesystem, boot partition, bootloader, networking, username, and any hardware-specific settings. Adjust anything that doesn't match your machine.
+
+5. Build and activate the configuration:
+
+   ```bash
+   sudo nixos-rebuild switch --flake ~/nixos#normal
+   ```
+
+6. Reboot if necessary and verify that your system works as expected.
