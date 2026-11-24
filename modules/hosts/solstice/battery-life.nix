@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.solstice = { pkgs, ... }:
+  flake.modules.nixos.solstice =
+    { pkgs, ... }:
     {
       systemd.services.battery-charge-threshold = {
         description = "Set battery charge thresholds";

@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.solstice = { osConfig, pkgs, ... }:
+  flake.modules.homeManager.solstice =
+    { osConfig, pkgs, ... }:
     {
       # Enable and setup git
       programs.git = {

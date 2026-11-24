@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.micro = { pkgs, ... }:
+  flake.modules.homeManager.micro =
+    { pkgs, ... }:
     let
       micro-lsp = pkgs.fetchFromGitHub {
         owner = "AndCake";

@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.scheduler = { pkgs, ... }:
+  flake.modules.nixos.scheduler =
+    { pkgs, ... }:
     {
       # Extensible BPF scheduler (sched_ext). scx_bpfland (general desktop),
       # Alternatives: scx_lavd (latency/power aware), scx_tickless (battery), scx_flash (low latency).

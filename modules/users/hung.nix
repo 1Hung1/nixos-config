@@ -7,7 +7,8 @@ let
   homeModules = config.flake.modules.homeManager;
 in
 {
-  flake.modules.nixos.hung = { pkgs, ... }:
+  flake.modules.nixos.hung =
+    { pkgs, ... }:
     {
       # Define a user account (change username if needed)
       users.users."hung" = {

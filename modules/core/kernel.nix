@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.kernel = { pkgs, ... }:
+  flake.modules.nixos.kernel =
+    { pkgs, ... }:
     {
       boot = {
         # Use CachyOS latest kernel and set kernel cmdline
@@ -10,7 +11,7 @@
           "threadirqs"
           "nowatchdog"
           "usbcore.autosuspend=1"
-          
+
           # Intel iGPU/dGPU kernel args
           "i915.enable_psr=1"
           "i915.enable_fbc=1"

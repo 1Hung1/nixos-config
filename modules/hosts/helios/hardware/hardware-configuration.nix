@@ -1,5 +1,12 @@
 {
-  flake.modules.nixos.helios = { config, lib, modulesPath, pkgs, ... }:
+  flake.modules.nixos.helios =
+    {
+      config,
+      lib,
+      modulesPath,
+      pkgs,
+      ...
+    }:
     {
       imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 

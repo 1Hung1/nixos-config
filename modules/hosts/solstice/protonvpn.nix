@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.solstice = { config, pkgs, ... }:
+  flake.modules.nixos.solstice =
+    { config, pkgs, ... }:
     let
       vpnToggle = pkgs.writeShellScriptBin "vpn" ''
         case "$1" in

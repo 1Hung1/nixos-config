@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.cli = { pkgs, ... }:
+  flake.modules.nixos.cli =
+    { pkgs, ... }:
     {
       # System programs/executables go here
       environment.systemPackages = with pkgs; [

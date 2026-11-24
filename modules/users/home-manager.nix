@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.home-manager = { inputs, pkgs, ... }:
+  flake.modules.nixos.home-manager =
+    { inputs, pkgs, ... }:
     {
       # Home Manager settings
       home-manager = {

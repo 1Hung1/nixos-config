@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.umbriel = { inputs, ... }:
+  flake.modules.homeManager.umbriel =
+    { inputs, ... }:
     {
       # Import Umbriel home-manager plugin
       imports = [ inputs.umbriel.homeModules.default ];

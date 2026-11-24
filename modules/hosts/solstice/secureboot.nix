@@ -1,5 +1,11 @@
 {
-  flake.modules.nixos.solstice = { lib, inputs, pkgs, ... }:
+  flake.modules.nixos.solstice =
+    {
+      lib,
+      inputs,
+      pkgs,
+      ...
+    }:
     {
       # Import lanzaboote module
       imports = [ inputs.lanzaboote.nixosModules.lanzaboote ];

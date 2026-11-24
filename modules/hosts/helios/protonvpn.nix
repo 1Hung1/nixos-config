@@ -1,5 +1,6 @@
 {
-  flake.modules.nixos.helios = { config, pkgs, ... }:
+  flake.modules.nixos.helios =
+    { config, pkgs, ... }:
     let
       vpnToggle = pkgs.writeShellScriptBin "vpn" ''
         case "$1" in

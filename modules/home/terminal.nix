@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.terminal = { pkgs, osConfig, ... }:
+  flake.modules.homeManager.terminal =
+    { pkgs, osConfig, ... }:
     {
       # Terminal configuration
       programs = {

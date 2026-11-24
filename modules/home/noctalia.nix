@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.noctalia = { inputs, ... }:
+  flake.modules.homeManager.noctalia =
+    { inputs, ... }:
     {
       # Import Noctalia home-manager plugin
       imports = [ inputs.noctalia.homeModules.default ];

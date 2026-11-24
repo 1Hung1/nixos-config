@@ -1,5 +1,6 @@
 {
-  flake.modules.homeManager.packages = { pkgs, ... }:
+  flake.modules.homeManager.packages =
+    { pkgs, ... }:
     {
       # User-specific packages go here
       home.packages = with pkgs; [
