@@ -21,11 +21,11 @@ let
     services-tempfiles
     hung-password
     {
-      home-manager.users.hung.imports = [ config.flake.modules.homeManager.solstice ];
+      home-manager.users.hung.imports = with config.flake.modules.homeManager; [
+        solstice
+        programs-git
+      ];
     }
-  ];
-  homeModules = with config.flake.modules.homeManager; [
-    programs-git
   ];
 in
 {

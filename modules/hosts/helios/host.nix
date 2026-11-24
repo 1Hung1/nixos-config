@@ -21,11 +21,11 @@ let
     services-tempfiles
     hung-password
     {
-      home-manager.users.hung.imports = [ config.flake.modules.homeManager.helios ];
+      home-manager.users.hung.imports = with config.flake.modules.homeManager; [
+        helios
+        programs-git
+      ];
     }
-  ];
-  homeModules = with config.flake.modules.homeManager; [
-    programs-git
   ];
 in
 {
@@ -36,6 +36,6 @@ in
       inherit inputs;
     };
 
-    modules = baseModules ++ hostModules ++ homeModules;
+    modules = baseModules ++ hostModules;
   };
 }
