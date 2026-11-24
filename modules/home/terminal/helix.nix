@@ -52,9 +52,9 @@
           };
           keys = {
             normal = {
-              C-w = ":w";
-              C-q = ":q!";
-              C-r = ":config-reload";
+              space-w = ":w";
+              space-q = ":q!";
+              A-r = ":config-reload";
             };
           };
         };
