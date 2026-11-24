@@ -67,8 +67,8 @@
                 "gtk4"
                 "kcolorscheme"
                 "umbriel"
+                "helix"
               ];
-              community_ids = [ "micro" ];
             };
           };
           wallpaper = {

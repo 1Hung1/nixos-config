@@ -6,7 +6,7 @@
         defaultEditor = true;
 
         settings = {
-          theme = "rose_pine";
+          theme = "noctalia";
 
           editor = {
             auto-pairs = false;
