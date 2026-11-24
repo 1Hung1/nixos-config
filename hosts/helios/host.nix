@@ -16,6 +16,7 @@ let
     common
     helios
     secrets
+    keyboard
     services-protonvpn
     services-openssh
     services-tempfiles

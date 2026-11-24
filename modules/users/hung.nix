@@ -25,7 +25,7 @@
       home-manager.users.hung.imports = with config.flake.modules.homeManager; [
         base
         cursor
-        micro
+        helix
         noctalia
         packages
         terminal

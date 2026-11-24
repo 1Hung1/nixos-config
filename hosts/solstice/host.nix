@@ -16,6 +16,7 @@ let
     common
     solstice
     secrets
+    keyboard
     services-protonvpn
     services-openssh
     services-tempfiles
