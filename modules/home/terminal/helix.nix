@@ -1,15 +1,19 @@
 {
-  flake.modules.homeManager.helix = { pkgs, ... }:
+  flake.modules.homeManager.helix =
+    { pkgs, ... }:
     {
       programs = {
         helix = {
           enable = true;
           defaultEditor = true;
-          extraPackages = with pkgs; [ nixd nixfmt ];
-  
+          extraPackages = with pkgs; [
+            nixd
+            nixfmt
+          ];
+
           settings = {
             theme = "noctalia";
-  
+
             editor = {
               auto-pairs = false;
               color-modes = true;
@@ -52,19 +56,7 @@
                 skip-levels = 1;
               };
             };
-            languages = {
-              language-server.nixd = {
-                command = "${pkgs.nixd}/bin/nixd";
-                args = [ "--semantic-tokens=true" ];
-              };
-              language = [
-                {
-                  name = "nix";
-                  auto-format = true;
-                  formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
-                }
-              ];
-            };
+
             keys = {
               normal = {
                 space = {
@@ -76,7 +68,21 @@
               };
             };
           };
+
+          languages = {
+            language-server.nixd = {
+              command = "${pkgs.nixd}/bin/nixd";
+              args = [ "--semantic-tokens=true" ];
+            };
+            language = [
+              {
+                name = "nix";
+                auto-format = true;
+                formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+              }
+            ];
+          };
         };
       };
-  };
+    };
 }
