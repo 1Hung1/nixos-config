@@ -1,4 +1,4 @@
-# nixos-config
+# nixos
 
 My personal NixOS configuration, featuring a dendritic pattern layout. This configuration uses the **dendritic pattern** — a feature-oriented module system where every `.nix` file is a self-contained module, auto-imported via `import-tree`. No central `imports` lists are maintained.
 
