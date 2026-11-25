@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.services-openssh = {
+  flake.modules.nixos.hosts-openssh = {
     services.openssh.enable = true;
     networking.firewall.enable = false;
   };

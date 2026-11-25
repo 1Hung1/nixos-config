@@ -24,12 +24,9 @@
       # The user's cross-host Home Manager aspects.
       home-manager.users.hung.imports = with config.flake.modules.homeManager; [
         base
-        cursor
-        helix
-        noctalia
-        packages
+        desktop
         terminal
-        umbriel
+        packages
         user-dirs
       ];
     };

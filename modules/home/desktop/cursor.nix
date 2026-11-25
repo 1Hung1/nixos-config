@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.cursor =
+  flake.modules.homeManager.desktop =
     { pkgs, ... }:
     let
       cursorName = "Bibata-Modern-Classic";

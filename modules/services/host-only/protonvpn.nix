@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.services-protonvpn =
+  flake.modules.nixos.hosts-protonvpn =
     { config, pkgs, ... }:
     let
       vpnToggle = pkgs.writeShellScriptBin "vpn" ''

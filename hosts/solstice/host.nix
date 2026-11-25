@@ -15,16 +15,15 @@ let
   hostModules = with config.flake.modules.nixos; [
     common
     solstice
-    secrets
-    keyboard
-    services-protonvpn
-    services-openssh
-    services-tempfiles
+    hosts-protonvpn
+    hosts-openssh
+    hosts-secrets
+    hosts-tempfiles
     hung-password
     {
       home-manager.users.hung.imports = with config.flake.modules.homeManager; [
         solstice
-        programs-git
+        hosts-git
       ];
     }
   ];

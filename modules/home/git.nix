@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.programs-git =
+  flake.modules.homeManager.hosts-git =
     { osConfig, pkgs, ... }:
     {
       # Enable and setup git

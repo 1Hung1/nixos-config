@@ -7,9 +7,9 @@
   flake.modules.nixos.common.imports = with config.flake.modules.nixos; [
     # Core stuff
     system
-    bootloader
-    kernel
+    boot
     nix
+    keyboard
 
     # Services
     services-main

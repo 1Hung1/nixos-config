@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.helix =
+  flake.modules.homeManager.terminal =
     { pkgs, ... }:
     {
       programs = {

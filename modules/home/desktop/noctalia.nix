@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.noctalia =
+  flake.modules.homeManager.desktop =
     { inputs, ... }:
     {
       # Import Noctalia home-manager plugin
