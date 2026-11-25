@@ -6,6 +6,7 @@
         helix = {
           enable = true;
           defaultEditor = true;
+          package = pkgs.steelix;
           extraPackages = with pkgs; [
             nixd
             nixfmt
