@@ -1,14 +1,11 @@
 {
   flake.modules.homeManager.helix = { pkgs, ... }:
     {
-      home.packages = with pkgs; [
-        nil
-        nixfmt
-      ];
       programs = {
         helix = {
           enable = true;
           defaultEditor = true;
+          extraPackages = with pkgs; [ nixd nixfmt ];
   
           settings = {
             theme = "noctalia";
@@ -54,6 +51,19 @@
                 character = "⸽";
                 skip-levels = 1;
               };
+            };
+            languages = {
+              language-server.nixd = {
+                command = "${pkgs.nixd}/bin/nixd";
+                args = [ "--semantic-tokens=true" ];
+              };
+              language = [
+                {
+                  name = "nix";
+                  auto-format = true;
+                  formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+                }
+              ];
             };
             keys = {
               normal = {
