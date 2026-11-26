@@ -40,7 +40,7 @@
             title_bar = {
               mode = "on";
               height = 30;
-              font = "sans 10";
+              font = "JetBrainsMono Nerd Font Mono 11";
               button_position = "right";
               buttons = [
                 "minimize"
