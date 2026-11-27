@@ -16,7 +16,7 @@
     services-main
     services-audio
     services-network
-    services-noctalia-greeter
+    services-noc-greeter
     services-scheduler
 
     # Programs
