@@ -5,9 +5,9 @@ nix-community = "gh:nix-community/{path}"
 manic = "gh:manic-systems/{path}"
 noctalia = "gh:noctalia-dev/{path}"
 
-# recursively omit selected upstream inputs from every top-level pin
-[omit_inputs]
-# names = ["flake-compat", "tack:cachix"]
+[all_follow]
+home-manager = "home-manager"
+nixpkgs = [ "nixpkgs-lib", "nixpkgs"]
 
 [inputs.nixpkgs]
 url = "gh:nixos/nixpkgs/nixos-unstable"
@@ -17,21 +17,20 @@ url = "manic:tack"
 
 [inputs.home-manager]
 url = "nix-community:home-manager"
-follows.nixpkgs = "nixpkgs"
 
 [inputs.flake-parts]
 url = "gh:hercules-ci/flake-parts"
-follows.nixpkgs = "nixpkgs"
 
 [inputs.lanzaboote]
 url = "nix-community:lanzaboote"
-follows.nixpkgs = "nixpkgs"
 
 [inputs.noctalia]
 url = "noctalia:noctalia/cachix"
+exclude_follow = ["nixpkgs"]
 
 [inputs.umbriel]
 url = "noctalia:umbriel/cachix"
+exclude_follow = ["nixpkgs"]
 
 [inputs.qtengine]
 url = "gh:kossLAN/qtengine"
