@@ -50,10 +50,9 @@
               default_view = "all";
               show_app_actions = true;
             };
-            panel = {
-              transparency_mode = "glass";
-            };
+            panel.transparency_mode = "glass";
             umbriel_audio_provider_enabled = true;
+            greeter_sync.auto_sync = true;
           };
           theme = {
             mode = "dark";

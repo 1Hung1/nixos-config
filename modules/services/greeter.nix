@@ -12,6 +12,7 @@
             path = pkgs.bibata-cursors;
           };
         };
+        passwordless-sync-users = [ "hung" ]; # change to your user name
       };
     };
 }
