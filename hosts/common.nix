@@ -17,6 +17,7 @@
     services-audio
     services-network
     services-keyring
+    services-noctalia-greeter
     services-scheduler
 
     # Programs
