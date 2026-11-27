@@ -50,7 +50,17 @@
               default_view = "all";
               show_app_actions = true;
             };
-            panel.transparency_mode = "glass";
+            panel = {
+              transparency_mode = "glass";
+              clipboard_placement = "attached";
+              launcher_placement = "attached";
+              open_near_click_clipboard = true;
+              open_near_click_control_center = true;
+              open_near_click_launcher = true;
+              open_near_click_session = true;
+              open_near_click_wallpaper = true;
+              polkit_placement = "attached";
+            };
             umbriel_audio_provider_enabled = true;
             greeter_sync.auto_sync = true;
           };
