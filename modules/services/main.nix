@@ -1,8 +1,5 @@
 {
   flake.modules.nixos.services-main = {
-    # Enable ly: A login manager
-    services.displayManager.ly.enable = true;
-
     # Enable power management daemons
     services.power-profiles-daemon.enable = true;
     services.upower.enable = true;

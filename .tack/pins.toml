@@ -44,6 +44,9 @@ url = "gh:ryantm/agenix"
 [inputs.import-tree]
 url = "gh:denful/import-tree"
 
+[inputs.noc-greeter]
+url = "noctalia:noctalia-greeter"
+
 [tack]
 recomposable = true
 type = "flake"

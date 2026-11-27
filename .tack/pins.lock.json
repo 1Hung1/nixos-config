@@ -7,6 +7,7 @@
     "import-tree": "github:denful/import-tree",
     "lanzaboote": "github:nix-community/lanzaboote",
     "nixpkgs": "github:nixos/nixpkgs/nixos-unstable",
+    "noc-greeter": "github:noctalia-dev/noctalia-greeter",
     "noctalia": "github:noctalia-dev/noctalia/cachix",
     "qtengine": "github:kossLAN/qtengine",
     "tack": "github:manic-systems/tack",
@@ -73,6 +74,15 @@
     "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
     "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
     "lastModified": 1795234589,
+    "public": true
+  },
+  "noc-greeter": {
+    "type": "github",
+    "owner": "noctalia-dev",
+    "repo": "noctalia-greeter",
+    "rev": "ec778fcba85ea07e94213939d11baabcd009817d",
+    "narHash": "sha256-uH+Sdn6gsVMB0hDJxtZ8fPMW+a0r22y9w9T7hbMf+hw=",
+    "lastModified": 1795324754,
     "public": true
   },
   "noctalia": {
