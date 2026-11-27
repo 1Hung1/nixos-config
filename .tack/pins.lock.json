@@ -3,6 +3,7 @@
     "agenix": "github:ryantm/agenix",
     "chaotic-nyx": "github:chaotic-cx/nyx/nyxpkgs-unstable",
     "flake-parts": "github:hercules-ci/flake-parts",
+    "helium": "github:schembriaiden/helium-browser-nix-flake",
     "home-manager": "github:nix-community/home-manager",
     "import-tree": "github:denful/import-tree",
     "lanzaboote": "github:nix-community/lanzaboote",
@@ -38,6 +39,15 @@
     "rev": "ea2630b7470978622c7689a1ff75d2b389175399",
     "narHash": "sha256-V1h85lUaJBQoHFrB2vpXZOE0Ju1MYSnIpsehoVZYlDo=",
     "lastModified": 1793576659,
+    "public": true
+  },
+  "helium": {
+    "type": "github",
+    "owner": "schembriaiden",
+    "repo": "helium-browser-nix-flake",
+    "rev": "449c7ce94f72f551faa9ed7f6ccb350a8f4d1487",
+    "narHash": "sha256-8OFGhv2FutUkm6BW6wRx2fhWtjWC+lJg+8kcTXGXJwk=",
+    "lastModified": 1795765376,
     "public": true
   },
   "home-manager": {

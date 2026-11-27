@@ -47,6 +47,9 @@ url = "gh:denful/import-tree"
 [inputs.noc-greeter]
 url = "noctalia:noctalia-greeter"
 
+[inputs.helium]
+url = "gh:schembriaiden/helium-browser-nix-flake"
+
 [tack]
 recomposable = true
 type = "flake"
