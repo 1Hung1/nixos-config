@@ -14,9 +14,13 @@
         auto-optimise-store = true;
 
         # Noctalia & Umbriel binary caches setup
-        extra-substituters = [ "https://noctalia.cachix.org" ];
+        extra-substituters = [
+          "https://noctalia.cachix.org"
+          "https://cache.manic.systems"
+        ];
         extra-trusted-public-keys = [
           "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+          "cache.manic.systems-1:s6OZanN8Us8vRi0jVivP3qlMn0cYHBjBALKrNe5nH8s="
         ];
       };
     };

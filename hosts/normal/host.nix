@@ -20,7 +20,7 @@ lib.optionalAttrs (builtins.pathExists hardware) {
     modules = [
       inputs.home-manager.nixosModules.home-manager
       inputs.agenix.nixosModules.default
-      inputs.chaotic.nixosModules.default
+      inputs.chaotic-nyx.nixosModules.default
       {
         system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
       }

@@ -10,6 +10,7 @@
     boot
     nix
     keyboard
+    tack
 
     # Services
     services-main

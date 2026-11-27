@@ -1,0 +1,50 @@
+# shorturl schemes
+[shorturls]
+gh = "github:{path}"
+nix-community = "gh:nix-community/{path}"
+manic = "gh:manic-systems/{path}"
+noctalia = "gh:noctalia-dev/{path}"
+
+# recursively omit selected upstream inputs from every top-level pin
+[omit_inputs]
+# names = ["flake-compat", "tack:cachix"]
+
+[inputs.nixpkgs]
+url = "gh:nixos/nixpkgs/nixos-unstable"
+
+[inputs.tack]
+url = "manic:tack"
+
+[inputs.home-manager]
+url = "nix-community:home-manager"
+follows.nixpkgs = "nixpkgs"
+
+[inputs.flake-parts]
+url = "gh:hercules-ci/flake-parts"
+follows.nixpkgs = "nixpkgs"
+
+[inputs.lanzaboote]
+url = "nix-community:lanzaboote"
+follows.nixpkgs = "nixpkgs"
+
+[inputs.noctalia]
+url = "noctalia:noctalia/cachix"
+
+[inputs.umbriel]
+url = "noctalia:umbriel/cachix"
+
+[inputs.qtengine]
+url = "gh:kossLAN/qtengine"
+
+[inputs.chaotic-nyx]
+url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
+
+[inputs.agenix]
+url = "gh:ryantm/agenix"
+
+[inputs.import-tree]
+url = "gh:denful/import-tree"
+
+[tack]
+recomposable = true
+type = "flake"
