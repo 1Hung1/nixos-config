@@ -1,5 +1,5 @@
 {
-  flake.module.nixos.services-noc-greeter =
+  flake.modules.nixos.services-noc-greeter =
     { inputs, pkgs, ... }:
     {
       imports = [ inputs.noc-greeter.nixosModules.default ];
