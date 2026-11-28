@@ -12,7 +12,6 @@
         settings = {
           include.optional.files = [
             "~/.config/umbriel/noctalia.toml"
-            "~/.config/umbriel/noctalia-shaders.toml"
           ];
 
           # General settings

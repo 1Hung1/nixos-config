@@ -1,6 +1,6 @@
 {
   flake.modules.homeManager.terminal = {
-    programs.kitty = {
+    programs.ghostty = {
       enable = true;
       enableZshIntegration = true;
       systemd.enable = true;
