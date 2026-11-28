@@ -81,9 +81,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixpkgs",
-    "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
-    "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
-    "lastModified": 1795234589,
+    "rev": "58d0d3e9d527ca7263be6a45d1f86eacdc700dab",
+    "narHash": "sha256-fD1nLSQM8tFob51/thCOr49JIAIjoqybAY27/+hwZQI=",
+    "lastModified": 1795546490,
     "public": true
   },
   "noc-greeter": {
@@ -99,9 +99,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "17e51bdbcd13da9f57858fbb30f19b7d723e629c",
-    "narHash": "sha256-gSj0GrlTj2QNsTZwH19wKqX8LSwOwZGz9jfSD+LyU14=",
-    "lastModified": 1795797641,
+    "rev": "87c63f1ccdc71c4972673153d7e52c95cc5b6f3f",
+    "narHash": "sha256-uLJ/a1bKIRidCRedgewNzv5H9zzBQ7DtocBSnX2HG+A=",
+    "lastModified": 1795847574,
     "public": true
   },
   "qtengine": {
