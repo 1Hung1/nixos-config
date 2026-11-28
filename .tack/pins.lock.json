@@ -8,7 +8,7 @@
     "import-tree": "github:denful/import-tree",
     "lanzaboote": "github:nix-community/lanzaboote",
     "nixpkgs": "github:nixos/nixpkgs/nixos-unstable",
-    "noc-greeter": "github:noctalia-dev/noctalia-greeter",
+    "noc-greeter": "github:noctalia-dev/noctalia-greeter/cachix",
     "noctalia": "github:noctalia-dev/noctalia/cachix",
     "qtengine": "github:kossLAN/qtengine",
     "tack": "github:manic-systems/tack",
