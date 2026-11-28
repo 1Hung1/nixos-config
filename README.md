@@ -2,10 +2,12 @@
 
 My personal NixOS configuration, built around **Flake-parts**, the **dendritic pattern**, and **Tack** for flake input management.
 
-The flake configures two `x86_64-linux` hosts:
+The flake currently defines two personal `x86_64-linux` hosts:
 
 - **`solstice`** — my daily-driver laptop, using LUKS + LVM.
 - **`helios`** — my mini PC, using LVM.
+
+These are examples of how I compose the modules, not generic installation targets.
 
 ## Structure
 
@@ -75,7 +77,7 @@ git clone https://github.com/1Hung1/nixos.git ~/nixos
 cd ~/nixos
 ```
 
-Build and activate one of the configured hosts:
+The configurations in this repository are specific to my machines. The commands below build **my** hosts; they are not intended as a drop-in installation command for another machine:
 
 ```sh
 sudo nixos-rebuild switch --flake .#solstice
@@ -85,10 +87,12 @@ sudo nixos-rebuild switch --flake .#helios
 
 I normally use `nh os switch` from the repository.
 
-## Adding a host
+## Using this configuration for your own host
+
+There is deliberately **no generic `normal` host or ready-made host template** in this repository. You are expected to create your own host configuration and select the modules that make sense for your hardware and setup. The existing `solstice` and `helios` configurations are reference implementations, not templates to copy wholesale.
 
 1. Create a directory under `hosts/<hostname>/`.
-2. Add a host Flake-parts module that defines `flake.nixosConfigurations.<hostname>`, composing `hosts/common.nix` with the host's modules. See `hosts/solstice/host.nix` and `hosts/helios/host.nix` for the current pattern.
+2. Add a host Flake-parts module that defines `flake.nixosConfigurations.<hostname>`, composing `hosts/common.nix` with the modules you want. Use `hosts/solstice/host.nix` and `hosts/helios/host.nix` to understand the composition pattern, then adapt it rather than copying machine-specific settings blindly.
 3. Generate the machine's hardware configuration on the target NixOS installation and place it under the host directory (for example, `hosts/<hostname>/hardware/hardware-configuration.nix`). Review it carefully.
 4. Add new files to Git so the flake can see them:
 
@@ -97,10 +101,10 @@ I normally use `nh os switch` from the repository.
    ```
 
 5. Review host-specific filesystems, bootloader, encryption, networking, hardware, and user settings before building.
-6. Build the new host with:
+6. Build your host with:
 
    ```sh
    sudo nixos-rebuild switch --flake .#<hostname>
    ```
 
-**Important:** hardware configuration and boot settings are machine-specific. Do not copy another host's disk identifiers, filesystem layout, Secure Boot setup, or kernel assumptions without checking that they match the target machine.
+**Important:** hardware configuration and boot settings are machine-specific. Do not copy another host's disk identifiers, filesystem layout, Secure Boot setup, secrets, VPN settings, or kernel assumptions without checking that they match your machine. Make sure you understand and replace any user-specific values before activating the configuration.
