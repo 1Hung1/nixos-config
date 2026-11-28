@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  self,
   ...
 }:
 let
@@ -10,7 +9,7 @@ let
     inputs.agenix.nixosModules.default
     inputs.chaotic-nyx.nixosModules.default
     {
-      system.configurationRevision = self.rev or self.dirtyRev or null;
+      system.configurationRevision = inputs.self.rev or inputs.self.dirtyRev or null;
     }
   ];
   hostModules = with config.flake.modules.nixos; [
