@@ -14,6 +14,7 @@ url = "gh:nixos/nixpkgs/nixos-unstable"
 
 [inputs.tack]
 url = "manic:tack"
+exclude_follow = ["nixpkgs"]
 
 [inputs.home-manager]
 url = "nix-community:home-manager"
@@ -23,6 +24,7 @@ url = "gh:hercules-ci/flake-parts"
 
 [inputs.lanzaboote]
 url = "nix-community:lanzaboote"
+exclude_follow = ["nixpkgs"]
 
 [inputs.noctalia]
 url = "noctalia:noctalia/cachix"
@@ -32,20 +34,22 @@ exclude_follow = ["nixpkgs"]
 url = "noctalia:umbriel/cachix"
 exclude_follow = ["nixpkgs"]
 
+[inputs.noc-greeter]
+url = "noctalia:noctalia-greeter/cachix"
+exclude_follow = ["nixpkgs"]
+
 [inputs.qtengine]
 url = "gh:kossLAN/qtengine"
 
 [inputs.chaotic-nyx]
 url = "gh:chaotic-cx/nyx/nyxpkgs-unstable"
+exclude_follow = ["nixpkgs"]
 
 [inputs.agenix]
 url = "gh:ryantm/agenix"
 
 [inputs.import-tree]
 url = "gh:denful/import-tree"
-
-[inputs.noc-greeter]
-url = "noctalia:noctalia-greeter"
 
 [inputs.helium]
 url = "gh:schembriaiden/helium-browser-nix-flake"
