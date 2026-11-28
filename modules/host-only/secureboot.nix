@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.solstice =
+  flake.modules.nixos.hosts-secureboot =
     {
       lib,
       inputs,

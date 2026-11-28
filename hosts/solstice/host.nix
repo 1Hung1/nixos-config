@@ -13,13 +13,19 @@ let
     }
   ];
   hostModules = with config.flake.modules.nixos; [
+    # Import normal/common modules
     common
+
+    # Import host-specific modules
     solstice
     hosts-protonvpn
     hosts-openssh
     hosts-secrets
     hosts-tempfiles
+    hosts-secureboot
     hung-password
+
+    # Import host-specfic Home Manager modules
     {
       home-manager.users.hung.imports = with config.flake.modules.homeManager; [
         solstice
