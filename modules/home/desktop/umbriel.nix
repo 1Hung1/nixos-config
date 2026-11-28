@@ -10,7 +10,10 @@
         enable = true;
 
         settings = {
-          include.optional.files = [ "~/.config/umbriel/noctalia.toml" ];
+          include.optional.files = [
+            "~/.config/umbriel/noctalia.toml"
+            "~/.config/umbriel/noctalia-shaders.toml"
+          ];
 
           # General settings
           general = {
